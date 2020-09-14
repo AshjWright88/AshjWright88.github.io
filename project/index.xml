@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects | Academic</title>
+    <link>https://AshjWright88.github.io/project/</link>
+      <atom:link href="https://AshjWright88.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    <description>Projects</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 14 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://AshjWright88.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Projects</title>
+      <link>https://AshjWright88.github.io/project/</link>
+    </image>
+    
+    <item>
+      <title>improving Flood Forecast Skill Using Remote Sensing Data</title>
+      <link>https://AshjWright88.github.io/project/floodforecasting/</link>
+      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://AshjWright88.github.io/project/floodforecasting/</guid>
+      <description>&lt;p&gt;Accurate flood predictions are critically important for limiting the damage caused by floods. Flood forecasting systems are based on models that require large volumes of data, such as rainfall forecasts, detailed measurements and high-resolution topography. However, flood forecasts are prone to uncertainty due to a lack of detailed measurements, and possible errors or oversimplifications in the models and/or data sets. Remote sensing is the science of obtaining information about objects or areas from a distance, typically from aircraft or satellites. This research is integrating this type of data on soil moisture and flood extent with rainfall and runoff models, which will lead to more accurate flood predictions. It will develop a remote sensing-aided methodology that can eventually enable forecasting models that predict the volume of water entering the river network to be applied anywhere in Australia.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Leapfrogging strategy for Bogor Raya</title>
+      <link>https://AshjWright88.github.io/project/leapfrogging/</link>
+      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://AshjWright88.github.io/project/leapfrogging/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

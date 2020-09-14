@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jeffrey P. Walker | Academic</title>
+    <link>https://AshjWright88.github.io/author/jeffrey-p.-walker/</link>
+      <atom:link href="https://AshjWright88.github.io/author/jeffrey-p.-walker/index.xml" rel="self" type="application/rss+xml" />
+    <description>Jeffrey P. Walker</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://AshjWright88.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Jeffrey P. Walker</title>
+      <link>https://AshjWright88.github.io/author/jeffrey-p.-walker/</link>
+    </image>
+    
+    <item>
+      <title>Identification of hydrologic models, optimized parameters, and rainfall inputs consistent with in situ streamflow and rainfall and remotely sensed soil moisture</title>
+      <link>https://AshjWright88.github.io/publication/wright-2018/</link>
+      <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
+      <guid>https://AshjWright88.github.io/publication/wright-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Application of the patient rule induction method to detect hydrologic model behavioural parameters and quantify uncertainty</title>
+      <link>https://AshjWright88.github.io/publication/shokri-2018/</link>
+      <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>https://AshjWright88.github.io/publication/shokri-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Estimating rainfall time series and model parameter distributions using model data reduction and inversion techniques</title>
+      <link>https://AshjWright88.github.io/publication/wright-2017-a/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      <guid>https://AshjWright88.github.io/publication/wright-2017-a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A comparison of the discrete cosine and wavelet transforms for hydrologic model input data reduction</title>
+      <link>https://AshjWright88.github.io/publication/wright-2017/</link>
+      <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
+      <guid>https://AshjWright88.github.io/publication/wright-2017/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

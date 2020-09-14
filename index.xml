@@ -5,12 +5,70 @@
     <link>https://AshjWright88.github.io/</link>
       <atom:link href="https://AshjWright88.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Academic</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 14 Sep 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://AshjWright88.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Academic</title>
       <link>https://AshjWright88.github.io/</link>
     </image>
+    
+    <item>
+      <title>Datathon 2020</title>
+      <link>https://AshjWright88.github.io/post/datathon-2020/</link>
+      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://AshjWright88.github.io/post/datathon-2020/</guid>
+      <description>&lt;p&gt;I am currently working on an entry for this years Datathon.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>improving Flood Forecast Skill Using Remote Sensing Data</title>
+      <link>https://AshjWright88.github.io/project/floodforecasting/</link>
+      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://AshjWright88.github.io/project/floodforecasting/</guid>
+      <description>&lt;p&gt;Accurate flood predictions are critically important for limiting the damage caused by floods. Flood forecasting systems are based on models that require large volumes of data, such as rainfall forecasts, detailed measurements and high-resolution topography. However, flood forecasts are prone to uncertainty due to a lack of detailed measurements, and possible errors or oversimplifications in the models and/or data sets. Remote sensing is the science of obtaining information about objects or areas from a distance, typically from aircraft or satellites. This research is integrating this type of data on soil moisture and flood extent with rainfall and runoff models, which will lead to more accurate flood predictions. It will develop a remote sensing-aided methodology that can eventually enable forecasting models that predict the volume of water entering the river network to be applied anywhere in Australia.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Leapfrogging strategy for Bogor Raya</title>
+      <link>https://AshjWright88.github.io/project/leapfrogging/</link>
+      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://AshjWright88.github.io/project/leapfrogging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Identification of hydrologic models, optimized parameters, and rainfall inputs consistent with in situ streamflow and rainfall and remotely sensed soil moisture</title>
+      <link>https://AshjWright88.github.io/publication/wright-2018/</link>
+      <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
+      <guid>https://AshjWright88.github.io/publication/wright-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Application of the patient rule induction method to detect hydrologic model behavioural parameters and quantify uncertainty</title>
+      <link>https://AshjWright88.github.io/publication/shokri-2018/</link>
+      <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>https://AshjWright88.github.io/publication/shokri-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Estimating rainfall time series and model parameter distributions using model data reduction and inversion techniques</title>
+      <link>https://AshjWright88.github.io/publication/wright-2017-a/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      <guid>https://AshjWright88.github.io/publication/wright-2017-a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A comparison of the discrete cosine and wavelet transforms for hydrologic model input data reduction</title>
+      <link>https://AshjWright88.github.io/publication/wright-2017/</link>
+      <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
+      <guid>https://AshjWright88.github.io/publication/wright-2017/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
