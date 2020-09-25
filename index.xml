@@ -5,7 +5,7 @@
     <link>https://AshjWright88.github.io/</link>
       <atom:link href="https://AshjWright88.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Ashley Wright</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 14 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://AshjWright88.github.io/media/ashcloud.png</url>
       <title>Ashley Wright</title>
@@ -13,11 +13,280 @@
     </image>
     
     <item>
-      <title>Datathon 2020</title>
-      <link>https://AshjWright88.github.io/post/datathon-2020/</link>
-      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>https://AshjWright88.github.io/post/datathon-2020/</guid>
-      <description>&lt;p&gt;I am currently working on an entry for this years Datathon.&lt;/p&gt;
+      <title>Learning From Electricty Consumption Data During A Pandemic - Part A</title>
+      <link>https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/</guid>
+      <description>&lt;p&gt;The COVID-19 pandemic has changed our understanding of uncertainty and what
+exactly normal is. We have seen economies free fall, toilet paper being hoarded, 
+and unprecedented amounts of data made publicly available. To say that 
+&lt;strong&gt;pivot&lt;/strong&gt; has emerged as a buzzword is an understatement. How then should we 
+decide which direction to pivot in? Let us see what we can learn from the data.&lt;/p&gt;
+&lt;p&gt;This weekly blog will deliver insights into:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The observed changes in electricity consumption during the pandemic.&lt;/li&gt;
+&lt;li&gt;What impact changed habits have on forecasting capability.&lt;/li&gt;
+&lt;li&gt;The value to be gained.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;As a starting point we will profile the typical weekday and weekend electricity
+consumption and reference price for Victorian&amp;rsquo;s during the current stage 4
+restrictions. To gain further insight into the potential impact stage 4
+restrictions have on electricity consumption and price, we will make comparisons
+to the same time period last year and New South Wales, a state which is not
+currently under stage 4 restrictions.&lt;/p&gt;
+&lt;h2 id=&#34;victorian-electricity-demand-profiles-during-stage-4-restrictions&#34;&gt;Victorian Electricity demand profiles during stage 4 restrictions&lt;/h2&gt;
+&lt;p&gt;Fluctuations in Electricity demand are predominantly influenced by
+human behaviour and the demand for heating and cooling. Typically, when
+comparing electricity demand across years and seasons, demand data is
+normalized by the weather. It is not pragmatic to normalise the 30 min
+electricity demand data, made available through
+
+&lt;a href=&#34;https://aemo.com.au/energy-systems/electricity/national-electricity-market-nem/data-nem/data-dashboard-nem&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AEMO&lt;/a&gt;,
+by the daily temperature observations made available through the 
+
+&lt;a href=&#34;http://www.bom.gov.au/climate/data/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;BoM&lt;/a&gt;. Consequently we will compare
+electricity demand data without factoring in heating and cooling
+requirements.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/VIC_profiles_hu569f28fcec4219fd478ace8d9805c832_219045_2000x2000_fit_lanczos_2.png&#34; &gt;
+
+
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/VIC_profiles_hu569f28fcec4219fd478ace8d9805c832_219045_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1542&#34; height=&#34;1283&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Key takeaway messages from reviewing Victorian energy demand data include:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Energy demand profiles cycle daily with peaks at morning and evening meal times.&lt;/li&gt;
+&lt;li&gt;Weekend energy demand shows more variation, particularly during stage 4 restrictions between 7 AM and 3PM.&lt;/li&gt;
+&lt;li&gt;There is more variation in energy demand during stage 4 restrictions, this could be 
+a result of less regularity in our lives.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;new-south-wales-energy-consumption-profiles-during-victorias-stage-4-restrictions&#34;&gt;New South Wales energy consumption profiles during Victoria&amp;rsquo;s stage 4 restrictions&lt;/h2&gt;
+&lt;p&gt;Naturally, I was then curious to compare the Victorian energy demand profiles
+to those found in a state which does not currently have stage 4 restrictions in place.
+Let&amp;rsquo;s look at the neighbouring state of NSW.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/NSW_profiles_hu3e5461593dfa90e51ed1295e88a6e80f_208351_2000x2000_fit_lanczos_2.png&#34; &gt;
+
+
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/NSW_profiles_hu3e5461593dfa90e51ed1295e88a6e80f_208351_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1555&#34; height=&#34;1283&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Key takeaway messages from reviewing NSW energy demand data include:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Weekday consumption appears to be quite similar for 2019 and 2020.&lt;/li&gt;
+&lt;li&gt;There is a slightly more variation in weekend consumption around 1 PM.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Aggregated energy demand across NSW and Victoria has not significantly changed.&lt;/strong&gt;
+This was not expected. It is quite possible that increases in 
+
+&lt;a href=&#34;https://www.energynetworks.com.au/news/energy-insider/2020-energy-insider/commercial-down-v-residential-up-covid-19s-electricity-impact/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;residential demand is offsetting decreases in commercial demand&lt;/a&gt;. 
+It would be great to get access to this data!&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;victorian-energy-price-profiles-during-victorias-stage-4-restrictions&#34;&gt;Victorian energy price profiles during Victoria&amp;rsquo;s stage 4 restrictions&lt;/h2&gt;
+&lt;p&gt;If you are like me and ask, &amp;ldquo;if residential energy demand has increased then will
+my energy bill be through the roof?&amp;rdquo; The answer is, it depends. The key
+variables are the electricity tariffs you pay (explore the Victorian energy
+compare 
+&lt;a href=&#34;https://compare.energy.vic.gov.au/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;website&lt;/a&gt; for more information) and
+the regional reference price which reflects the price to supply energy to a
+region.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/VIC_RRP_hufd85d6b55baf2a4acb6192b3463475a7_191562_2000x2000_fit_lanczos_2.png&#34; &gt;
+
+
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/VIC_RRP_hufd85d6b55baf2a4acb6192b3463475a7_191562_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1529&#34; height=&#34;1283&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Key takeaway messages from reviewing Victorian RRP data include:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;There has been a &lt;strong&gt;significant&lt;/strong&gt; shift in RRP since last year.&lt;/li&gt;
+&lt;li&gt;It appears there is not a morning peak in RRP.&lt;/li&gt;
+&lt;li&gt;There are currently less fluctuations in RRP throughout the day.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;new-south-wales-energy-price-profiles-during-victorias-stage-4-restrictions&#34;&gt;New South Wales energy price profiles during Victoria&amp;rsquo;s stage 4 restrictions&lt;/h2&gt;
+&lt;p&gt;Again, we should compare this to New South Wales to see if the trend is specific
+to Victoria.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/NSW_RRP_hu45da5f1ca42e5a833609dd0818637bfc_190820_2000x2000_fit_lanczos_2.png&#34; &gt;
+
+
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/NSW_RRP_hu45da5f1ca42e5a833609dd0818637bfc_190820_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1529&#34; height=&#34;1283&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;After reviewing the NSW RRP data it is clear that the decline in RRP
+is &lt;strong&gt;not&lt;/strong&gt; specific to Victoria.&lt;/p&gt;
+&lt;h2 id=&#34;how-australias-regional-reference-prices-have-changed-over-the-years&#34;&gt;How Australia&amp;rsquo;s Regional Reference Prices have changed over the years&lt;/h2&gt;
+&lt;p&gt;The next step is to compare the average RRP for electricity in each state for
+each year to the current date of analysis.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/Mean_price_hue7bce37aaaf05561150ea928b75fbe93_102632_2000x2000_fit_lanczos_2.png&#34; &gt;
+
+
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/Mean_price_hue7bce37aaaf05561150ea928b75fbe93_102632_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2322&#34; height=&#34;1268&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;The key takeaway messages from reviewing state by state RRP include:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;RRP is at a &lt;strong&gt;5 year low&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Electricity RRP is heavily influenced by LNG which is in turn influence
+by the price of oil. For the interested reader please refer 
+&lt;a href=&#34;https://www.energycouncil.com.au/analysis/gas-and-wholesale-prices-a-market-at-work/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;
+for more information.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;COVID-19 is not&lt;/strong&gt; the only reason electricity prices are at 5 year low, activity
+in the LNG industry through 2016 and 2017 temporarily drove RRP higher.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;2020 has been a year of uncertainty and the need for good quality forecasts has
+increased. Prior to making any predictions about the future it is imperative
+that the data is explored and key drivers for change are understood. Even then,
+unprecedented changes make forecasting even more difficult. Future posts may 
+look into household consumption and/or the influence oil price has on RRP.
+What are your thoughts?&lt;/p&gt;
 </description>
     </item>
     
