@@ -5,7 +5,7 @@
     <link>https://AshjWright88.github.io/post/</link>
       <atom:link href="https://AshjWright88.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 28 Sep 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://AshjWright88.github.io/media/ashcloud.png</url>
       <title>Posts</title>
@@ -15,7 +15,7 @@
     <item>
       <title>Learning From Electricty Consumption Data During A Pandemic - Part A</title>
       <link>https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/</link>
-      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/</guid>
       <description>&lt;p&gt;The COVID-19 pandemic has changed our understanding of uncertainty and what
 exactly normal is. We have seen economies free fall, toilet paper being hoarded, 
@@ -32,7 +32,7 @@ decide which direction to pivot in? Let us see what we can learn from the data.&
 consumption and reference price for Victorian&amp;rsquo;s during the current stage 4
 restrictions. To gain further insight into the potential impact stage 4
 restrictions have on electricity consumption and price, we will make comparisons
-to the same time period last year and New South Wales, a state which is not
+for the same time period last year in Victoria and similarly New South Wales, a state which is not
 currently under stage 4 restrictions.&lt;/p&gt;
 &lt;h2 id=&#34;victorian-electricity-demand-profiles-during-stage-4-restrictions&#34;&gt;Victorian Electricity demand profiles during stage 4 restrictions&lt;/h2&gt;
 &lt;p&gt;Fluctuations in Electricity demand are predominantly influenced by
@@ -146,8 +146,8 @@ my energy bill be through the roof?&amp;rdquo; The answer is, it depends. The ke
 variables are the electricity tariffs you pay (explore the Victorian energy
 compare 
 &lt;a href=&#34;https://compare.energy.vic.gov.au/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;website&lt;/a&gt; for more information) and
-the regional reference price which reflects the price to supply energy to a
-region.&lt;/p&gt;
+the &lt;strong&gt;regional reference price (RRP)&lt;/strong&gt; which reflects the price to supply energy
+to a region.&lt;/p&gt;
 
 
 
@@ -281,12 +281,15 @@ for more information.&lt;/li&gt;
 in the LNG industry through 2016 and 2017 temporarily drove RRP higher.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;During stage 4 restrictions Victoria the demand for electricity has
+been less regularly than this time last year. A number of factors, one of which
+being COVID-19, have driven the regional reference price for electricity to a 5
+year low.&lt;/p&gt;
 &lt;p&gt;2020 has been a year of uncertainty and the need for good quality forecasts has
 increased. Prior to making any predictions about the future it is imperative
 that the data is explored and key drivers for change are understood. Even then,
 unprecedented changes make forecasting even more difficult. Future posts may 
-look into household consumption and/or the influence oil price has on RRP.
-What are your thoughts?&lt;/p&gt;
+look into household consumption and/or the influence oil price has on RRP.&lt;/p&gt;
 </description>
     </item>
     
