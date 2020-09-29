@@ -73,10 +73,10 @@ requirements.&lt;/p&gt;
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/VIC_profiles_hu1a01ad05e0afb43abf9d18ec7319c84e_203947_2000x2000_fit_lanczos_2.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/VIC_profiles_hud8c4ed02445b99766836fe8dcc6fdd3a_196208_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/VIC_profiles_hu1a01ad05e0afb43abf9d18ec7319c84e_203947_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1542&#34; height=&#34;1283&#34;&gt;
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/VIC_profiles_hud8c4ed02445b99766836fe8dcc6fdd3a_196208_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1542&#34; height=&#34;1283&#34;&gt;
 &lt;/a&gt;
 
 
@@ -85,8 +85,8 @@ requirements.&lt;/p&gt;
 
 &lt;p&gt;Key takeaway messages from reviewing Victorian energy demand data include:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Our weekends are looking quite similar to our weekdays.&lt;/li&gt;
-&lt;li&gt;Weekend peaks associated with night-time activity are not evident during the current restrictions.&lt;/li&gt;
+&lt;li&gt;Our weekends are looking less regular.&lt;/li&gt;
+&lt;li&gt;Midday demand is flatter on weekends.&lt;/li&gt;
 &lt;li&gt;Weekend energy demand shows more variation, particularly during stage 4 restrictions between 7 AM and 3PM.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;new-south-wales-energy-consumption-profiles-during-victorias-stage-4-restrictions&#34;&gt;&lt;strong&gt;New South Wales energy consumption profiles during Victoria&amp;rsquo;s stage 4 restrictions&lt;/strong&gt;&lt;/h2&gt;
@@ -119,10 +119,10 @@ Let&amp;rsquo;s look at the neighbouring state of NSW.&lt;/p&gt;
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/NSW_profiles_hua080799e35a2e51567557856e2654181_193689_2000x2000_fit_lanczos_2.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/NSW_profiles_huf558fdf2d92caad69a4b55d2bd962063_185734_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/NSW_profiles_hua080799e35a2e51567557856e2654181_193689_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1555&#34; height=&#34;1283&#34;&gt;
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/NSW_profiles_huf558fdf2d92caad69a4b55d2bd962063_185734_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1555&#34; height=&#34;1283&#34;&gt;
 &lt;/a&gt;
 
 
@@ -131,7 +131,7 @@ Let&amp;rsquo;s look at the neighbouring state of NSW.&lt;/p&gt;
 
 &lt;p&gt;Key takeaway messages from reviewing NSW energy demand data include:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Night-time activity has also decreased in NSW.&lt;/li&gt;
+&lt;li&gt;There are less changes changes in midday demand on the weekends.&lt;/li&gt;
 &lt;li&gt;Less restrictions in NSW may be associated with more consistency in electricity demand.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Aggregated energy demand across NSW and Victoria has not significantly changed.&lt;/strong&gt;
 This was not expected. It is quite possible that increases in 
@@ -280,7 +280,8 @@ for more information.&lt;/li&gt;
 are a number of other important factors to consider.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
-&lt;p&gt;Weekend electricity demand is comparable to weekday electricity demand.
+&lt;p&gt;When compared to this time last year, weekend electricity demand under the
+current restrictions is less regular for Victoria.
 COVID-19, among other factors, has driven the regional reference price for
 electricity to a 5 year low.&lt;/p&gt;
 &lt;p&gt;2020 has been a year of uncertainty and the need for good quality forecasts has
