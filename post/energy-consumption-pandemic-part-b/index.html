@@ -30,10 +30,10 @@
   
     
   
-  <meta name="description" content="The COVID-19 pandemic has changed our understanding of uncertainty and what exactly normal is. We have seen economies free fall, toilet paper being hoarded, and unprecedented amounts of data made publicly available.">
+  <meta name="description" content="Model Development Using the daily Victorian electricity demand as an example, this blog will outline procedures to develop a forecasting model. To enable scheduling of energy supply for the next day I develop one day ahead forecasts.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/">
+  <link rel="alternate" hreflang="en-us" href="https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/">
 
   
 
@@ -294,7 +294,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/">
+  <link rel="canonical" href="https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/">
 
   
   
@@ -309,15 +309,15 @@
   <meta property="twitter:card" content="summary_large_image">
   
   <meta property="og:site_name" content="Ashley Wright">
-  <meta property="og:url" content="https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/">
-  <meta property="og:title" content="Learning from Electricity Demand Data During A Pandemic - Part A | Ashley Wright">
-  <meta property="og:description" content="The COVID-19 pandemic has changed our understanding of uncertainty and what exactly normal is. We have seen economies free fall, toilet paper being hoarded, and unprecedented amounts of data made publicly available."><meta property="og:image" content="https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/featured.jpg">
-  <meta property="twitter:image" content="https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/featured.jpg"><meta property="og:locale" content="en-us">
+  <meta property="og:url" content="https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/">
+  <meta property="og:title" content="Learning from Electricity Demand Data During A Pandemic - Part B | Ashley Wright">
+  <meta property="og:description" content="Model Development Using the daily Victorian electricity demand as an example, this blog will outline procedures to develop a forecasting model. To enable scheduling of energy supply for the next day I develop one day ahead forecasts."><meta property="og:image" content="https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/featured.jpg">
+  <meta property="twitter:image" content="https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/featured.jpg"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-09-28T00:00:00&#43;00:00">
+      <meta property="article:published_time" content="2020-10-05T00:00:00&#43;00:00">
     
-    <meta property="article:modified_time" content="2020-09-28T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2020-10-05T00:00:00&#43;00:00">
   
 
   
@@ -341,16 +341,16 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/"
+    "@id": "https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/"
   },
-  "headline": "Learning from Electricity Demand Data During A Pandemic - Part A",
+  "headline": "Learning from Electricity Demand Data During A Pandemic - Part B",
   
   "image": [
-    "https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/featured.jpg"
+    "https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/featured.jpg"
   ],
   
-  "datePublished": "2020-09-28T00:00:00Z",
-  "dateModified": "2020-09-28T00:00:00Z",
+  "datePublished": "2020-10-05T00:00:00Z",
+  "dateModified": "2020-10-05T00:00:00Z",
   
   "author": {
     "@type": "Person",
@@ -365,7 +365,7 @@
       "url": "https://AshjWright88.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "The COVID-19 pandemic has changed our understanding of uncertainty and what exactly normal is. We have seen economies free fall, toilet paper being hoarded, and unprecedented amounts of data made publicly available."
+  "description": "Model Development Using the daily Victorian electricity demand as an example, this blog will outline procedures to develop a forecasting model. To enable scheduling of energy supply for the next day I develop one day ahead forecasts."
 }
 </script>
 
@@ -383,7 +383,7 @@
 
 
 
-  <title>Learning from Electricity Demand Data During A Pandemic - Part A | Ashley Wright</title>
+  <title>Learning from Electricity Demand Data During A Pandemic - Part B | Ashley Wright</title>
 
 </head>
 
@@ -760,7 +760,7 @@
 
 
 <div class="article-container pt-3">
-  <h1>Learning from Electricity Demand Data During A Pandemic - Part A</h1>
+  <h1>Learning from Electricity Demand Data During A Pandemic - Part B</h1>
 
   
 
@@ -778,7 +778,7 @@
     
       
     
-    Sep 28, 2020
+    Oct 5, 2020
   </span>
   
 
@@ -818,10 +818,10 @@
 </div>
 
 
-<div class="article-header container-fluid featured-image-wrapper mt-4 mb-4" style="max-width: 3500px; max-height: 2333px;">
+<div class="article-header container-fluid featured-image-wrapper mt-4 mb-4" style="max-width: 1960px; max-height: 2213px;">
   <div style="position: relative">
-    <img src="/post/energy-consumption-pandemic-part-a/featured.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Image credit: <a href="https://www.pexels.com/photo/five-bulb-lights-1036936/"><strong>Rodolfo Clix</strong></a></span>
+    <img src="/post/energy-consumption-pandemic-part-b/featured.jpg" alt="" class="featured-image">
+    
   </div>
 </div>
 
@@ -830,36 +830,29 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>The COVID-19 pandemic has changed our understanding of uncertainty and what
-exactly normal is. We have seen economies free fall, toilet paper being hoarded, 
-and unprecedented amounts of data made publicly available. To say that 
-<strong>pivot</strong> has emerged as a buzzword is an understatement. How then should we 
-decide which direction to pivot in? Let us see what we can learn from the data.</p>
-<p>This weekly blog will deliver insights into:</p>
+      <h2 id="model-development"><strong>Model Development</strong></h2>
+<p>Using the daily Victorian electricity demand as an example, this blog will
+outline procedures to <strong>develop a forecasting model</strong>. To enable scheduling of
+energy supply for the next day I develop one day ahead forecasts.
+In my next post I will use this model to outline procedures 
+to <strong>improve forecasting capability</strong> during uncertain times.</p>
+<p>When developing a model, it is easy to get carried away and build a fancy, shiny
+model which resembles a <strong>Formula One car</strong>. If we are wanting to go off road,
+then this model/car is next to useless. It is imperative to develop a fit for
+purpose model and track modeling improvements.</p>
+<p>This blog will outline how I have:</p>
 <ol>
-<li>The observed changes in electricity demand during the pandemic.</li>
-<li>What impact changed habits have on forecasting capability.</li>
-<li>The value to be gained.</li>
+<li>Tracked model development to ensure time is spent on measurable and valuable
+model improvements.</li>
+<li>Cleaned and explored the data.</li>
+<li>Developed a benchmark forecasting model.</li>
+<li>Developed a LSTM recurrent neural network to forecast electricity demand.</li>
+<li>Developed a MLP artificial neural network to forecast electricity demand.</li>
 </ol>
-<p>As a starting point we will profile the typical weekday and weekend electricity
-demand and reference price for Victorian&rsquo;s during the current stage 4
-restrictions. To gain further insight into the potential impact stage 4
-restrictions have on electricity demand and price, we will make comparisons
-for the same time period last year in Victoria and similarly New South Wales, a state which is not
-currently under stage 4 restrictions.</p>
-<h2 id="victorian-electricity-demand-profiles-during-stage-4-restrictions"><strong>Victorian Electricity demand profiles during stage 4 restrictions</strong></h2>
-<p>Fluctuations in Electricity demand are predominantly influenced by
-human behaviour and the demand for heating and cooling. Typically, when
-comparing electricity demand across years and seasons, demand data is
-normalized by the weather. It is not pragmatic to normalise the 30 min
-electricity demand data, made available through
-
-<a href="https://aemo.com.au/energy-systems/electricity/national-electricity-market-nem/data-nem/data-dashboard-nem" target="_blank" rel="noopener">AEMO</a>,
-by the daily temperature observations made available through the 
-
-<a href="http://www.bom.gov.au/climate/data/" target="_blank" rel="noopener">BoM</a>. Consequently, we will compare
-electricity demand data without factoring in heating and cooling
-requirements.</p>
+<h2 id="tracking-model-development"><strong>Tracking Model Development</strong></h2>
+<p>Using the mean absolute percentage error, I demonstrate below
+one way that improvement can be tracked as model features are added and model
+complexity grows.</p>
 
 
 
@@ -886,80 +879,37 @@ requirements.</p>
 <figure >
 
 
-  <a data-fancybox="" href="/post/energy-consumption-pandemic-part-a/VIC_profiles_hud8c4ed02445b99766836fe8dcc6fdd3a_196208_2000x2000_fit_lanczos_2.png" >
+  <a data-fancybox="" href="/post/energy-consumption-pandemic-part-b/model_track_hu3a8eb10c2cf40985c1926c233b651109_120457_2000x2000_fit_lanczos_2.png" >
 
 
-  <img data-src="/post/energy-consumption-pandemic-part-a/VIC_profiles_hud8c4ed02445b99766836fe8dcc6fdd3a_196208_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="1542" height="1283">
+  <img data-src="/post/energy-consumption-pandemic-part-b/model_track_hu3a8eb10c2cf40985c1926c233b651109_120457_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="1833" height="742">
 </a>
 
 
 
 </figure>
 
-<p>Key takeaway messages from reviewing Victorian electricity demand data include:</p>
+<p><em>Model performance is greatest when the mean absolute percentage error reaches zero</em></p>
+<p>Key takeaway messages from tracking model development include:</p>
 <ol>
-<li>Our weekends are looking less regular.</li>
-<li>Midday demand is flatter on weekends.</li>
-<li>Weekend electricity demand shows more variation, particularly during stage 4 restrictions between 7 AM and 3PM.</li>
+<li>Both the MLP and LSTM <strong>outperform</strong> the benchmark model.</li>
+<li>Significant improvements are noticed when <strong>temperature</strong> data is included.</li>
+<li><strong>Further improvements</strong> are realised when we account for the day of the week
+and holidays.</li>
 </ol>
-<h2 id="new-south-wales-electricity-demand-profiles-during-victorias-stage-4-restrictions"><strong>New South Wales electricity demand profiles during Victoria&rsquo;s stage 4 restrictions</strong></h2>
-<p>Naturally, I was then curious to compare the Victorian electricity demand profiles
-to those found in a state which does not currently have stage 4 restrictions in place.
-Let&rsquo;s look at the neighbouring state of NSW.</p>
-
-
-
-
-
-
-  
-
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-<figure >
-
-
-  <a data-fancybox="" href="/post/energy-consumption-pandemic-part-a/NSW_profiles_huf558fdf2d92caad69a4b55d2bd962063_185734_2000x2000_fit_lanczos_2.png" >
-
-
-  <img data-src="/post/energy-consumption-pandemic-part-a/NSW_profiles_huf558fdf2d92caad69a4b55d2bd962063_185734_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="1555" height="1283">
-</a>
-
-
-
-</figure>
-
-<p>Key takeaway messages from reviewing NSW electricity demand data include:</p>
+<p>At this point it is essential to ask <em>&ldquo;will the end user benefit from further model development&rdquo;</em>?</p>
+<h2 id="data-cleaning-and-exploratory-data-analysis"><strong>Data Cleaning and Exploratory Data Analysis</strong></h2>
+<p><em>I now outline the process used to develop these models.</em></p>
+<p>Models are only ever as good as the data they are built on and the understanding
+of the key variables which cause a change in the observations.</p>
+<p>This dataset was checked for:</p>
 <ol>
-<li>There are less changes changes in midday demand on the weekends.</li>
-<li>Less restrictions in NSW may be associated with more consistency in electricity demand.</li>
-<li><strong>Aggregated electricity demand across NSW and Victoria has not significantly changed.</strong>
-This was not expected. It is quite possible that increases in 
-
-<a href="https://www.energynetworks.com.au/news/energy-insider/2020-energy-insider/commercial-down-v-residential-up-covid-19s-electricity-impact/" target="_blank" rel="noopener">residential demand are offsetting decreases in commercial demand</a>. 
-It would be great to get access to this data!</li>
+<li>Missing data points.</li>
+<li>Outliers.</li>
+<li>General inconsistencies.</li>
 </ol>
-<h2 id="victorian-electricity-price-profiles-during-victorias-stage-4-restrictions"><strong>Victorian electricity price profiles during Victoria&rsquo;s stage 4 restrictions</strong></h2>
-<p>If you are like me and ask, &ldquo;if residential electricity demand has increased then will
-my electricity bill be through the roof?&rdquo; The answer is it depends. The key
-variables are the electricity tariffs you pay (explore the Victorian energy
-compare 
-<a href="https://compare.energy.vic.gov.au/" target="_blank" rel="noopener">website</a> for more information) and
-the <strong>regional reference price (RRP)</strong> which reflects the price to supply electricity
-to a region.</p>
+<p>Now we can explore the data and look for hints that will help us construct 
+an appropriate model.</p>
 
 
 
@@ -986,25 +936,31 @@ to a region.</p>
 <figure >
 
 
-  <a data-fancybox="" href="/post/energy-consumption-pandemic-part-a/VIC_RRP_huec09bd75497e4d9de63913c8d2529db8_171709_2000x2000_fit_lanczos_2.png" >
+  <a data-fancybox="" href="/post/energy-consumption-pandemic-part-b/VIC_decomp_hu2b8dc1ea9b117058e94fb45290872c27_416991_2000x2000_fit_lanczos_2.png" >
 
 
-  <img data-src="/post/energy-consumption-pandemic-part-a/VIC_RRP_huec09bd75497e4d9de63913c8d2529db8_171709_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="1529" height="1283">
+  <img data-src="/post/energy-consumption-pandemic-part-b/VIC_decomp_hu2b8dc1ea9b117058e94fb45290872c27_416991_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="1931" height="1460">
 </a>
 
 
 
 </figure>
 
-<p>Key takeaway messages from reviewing Victorian RRP data include:</p>
+<p>Key takeaway messages from reviewing the decomposed electricity demand for Victoria
+include:</p>
 <ol>
-<li>There has been a <strong>significant</strong> shift in RRP since last year.</li>
-<li>There is no longer a morning peak in RRP.</li>
-<li>There are currently less fluctuations in RRP throughout the day.</li>
+<li>From 2014 to 2018 there is a slight <strong>downward trend</strong> in electricity demand,
+this may be a result of <strong>electricity efficiency</strong> measures.</li>
+<li>There is a clear yearly seasonal component, this is likely to be a result of
+seasonal fluctuations in <strong>temperature</strong> and the subsequent heating and cooling demand.</li>
+<li>The residuals show that errors tend to <strong>peak</strong> at the beginning of the year.</li>
 </ol>
-<h2 id="new-south-wales-electricity-price-profiles-during-victorias-stage-4-restrictions">New South Wales electricity price profiles during Victoria&rsquo;s stage 4 restrictions</h2>
-<p>Again, we should compare this to New South Wales to see if the trend is specific
-to Victoria.</p>
+<h2 id="benchmark-model"><strong>Benchmark Model</strong></h2>
+<p>Upon reviewing 
+<a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0194889" target="_blank" rel="noopener">Statistical and Machine Learning forecasting methods</a>
+we can see that exponential smoothing models commonly outperformed other
+statistical and machine learning models. Well suited to model seasonality and
+trend we use the Holt - Winters triple exponential smoother as our benchmark.</p>
 
 
 
@@ -1031,77 +987,132 @@ to Victoria.</p>
 <figure >
 
 
-  <a data-fancybox="" href="/post/energy-consumption-pandemic-part-a/NSW_RRP_hudc11793e7fcb86b575cf34e90df49414_174426_2000x2000_fit_lanczos_2.png" >
+  <a data-fancybox="" href="/post/energy-consumption-pandemic-part-b/VIC_ETS_hu728e599515bb3c2864a618ff7962ae2f_542176_2000x2000_fit_lanczos_2.png" >
 
 
-  <img data-src="/post/energy-consumption-pandemic-part-a/NSW_RRP_hudc11793e7fcb86b575cf34e90df49414_174426_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="1529" height="1283">
+  <img data-src="/post/energy-consumption-pandemic-part-b/VIC_ETS_hu728e599515bb3c2864a618ff7962ae2f_542176_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="1931" height="1460">
 </a>
 
 
 
 </figure>
 
-<p>After reviewing the NSW RRP data, it is clear that the decline in RRP
-is <strong>not</strong> specific to Victoria.</p>
-<h2 id="how-australias-regional-reference-prices-have-changed-over-the-years"><strong>How Australia&rsquo;s Regional Reference Prices have changed over the years</strong></h2>
-<p>The next step is to compare the average RRP for electricity in each state for
-each year to the current date of analysis.</p>
-
-
-
-
-
-
-  
-
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-<figure >
-
-
-  <a data-fancybox="" href="/post/energy-consumption-pandemic-part-a/Mean_price_hu9bc1f9dcf86ca787a867b9b756fa193e_102820_2000x2000_fit_lanczos_2.png" >
-
-
-  <img data-src="/post/energy-consumption-pandemic-part-a/Mean_price_hu9bc1f9dcf86ca787a867b9b756fa193e_102820_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="2322" height="1268">
-</a>
-
-
-
-</figure>
-
-<p>The key takeaway messages from reviewing state by state RRP include:</p>
+<p>Key takeaway messages from reviewing the benchmark model:</p>
 <ol>
-<li>RRP is at a <strong>5-year low</strong>.</li>
-<li>Electricity RRP is heavily influenced by <strong>LNG</strong> which is in turn influenced
-by the price of <strong>oil</strong>. For the interested reader please refer 
-<a href="https://www.energycouncil.com.au/analysis/gas-and-wholesale-prices-a-market-at-work/" target="_blank" rel="noopener">here</a>
-for more information.</li>
-<li><strong>COVID-19 is not</strong> the only reason electricity prices are at 5 year low, there
-are a number of other important factors to consider.</li>
+<li>The benchmark model captures the <strong>annual seasonality</strong>.</li>
+<li>Residuals in training still show errors <strong>peaking</strong> at the start of the year.</li>
+<li>The residuals in development show a <strong>weekly pattern</strong> which is potentially
+a result of lower electricity demand on the weekend.</li>
+</ol>
+<h2 id="long-short-term-memory-recurrent-neural-network"><strong>Long Short-Term Memory Recurrent Neural Network</strong></h2>
+<p>The LSTM RNN is a popular choice for time series forecasting.
+This model learns from the past 7 days of electricity demand, minimum, maximum,
+and average temperature, and solar radiation.
+It is assumed that we will have a good estimate of the next day&rsquo;s weather.</p>
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure >
+
+
+  <a data-fancybox="" href="/post/energy-consumption-pandemic-part-b/LSTM_weather_hub9fdcee5a170e9fef984b0e5133c2470_495830_2000x2000_fit_lanczos_2.png" >
+
+
+  <img data-src="/post/energy-consumption-pandemic-part-b/LSTM_weather_hub9fdcee5a170e9fef984b0e5133c2470_495830_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="1931" height="1460">
+</a>
+
+
+
+</figure>
+
+<p>The key takeaway messages from reviewing LSTM model performance are:</p>
+<ol>
+<li>The <strong>LSTM</strong> significantly out-performs the benchmark model capturing peak demand much better.</li>
+<li>The residuals in training show that there is a <strong>pattern</strong> to the errors. These
+peaks are likely to be around holiday periods.</li>
+<li>The residuals in development still show a <strong>weekly pattern</strong>. This is likely to be
+a result of lower electricity demand on the weekend.</li>
+</ol>
+<h2 id="multilayer-perceptron-artificial-neural-network"><strong>Multilayer Perceptron Artificial Neural Network</strong></h2>
+<p>Instead of perceiving electricity demand as a time series model we can treat the
+model as a function of the past 7 days for weather, day of the week and year,
+and holiday period. The MLP ANN is well suited to this task.</p>
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure >
+
+
+  <a data-fancybox="" href="/post/energy-consumption-pandemic-part-b/MLP_all_hu50233b4b27128dab9f83507a938f176a_475557_2000x2000_fit_lanczos_2.png" >
+
+
+  <img data-src="/post/energy-consumption-pandemic-part-b/MLP_all_hu50233b4b27128dab9f83507a938f176a_475557_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="1931" height="1460">
+</a>
+
+
+
+</figure>
+
+<p>The key takeaway messages from reviewing MLP model performance are:</p>
+<ol>
+<li>Including days of the year which <strong>account for behavioral</strong> changes commonly
+associated with changes to electricity demand significantly improves performance.</li>
+<li>The model tends to both <strong>under and over-predict peaks and troughs</strong>. An 
+alternate loss function may help this.</li>
+<li>Since <strong>behaviour is a key element</strong> to electricity demand forecasting, we can
+expect electricity demand during the <strong>pandemic</strong> to be more difficult to forecast.</li>
 </ol>
 <h2 id="summary">Summary</h2>
-<p>When compared to this time last year, weekend electricity demand under the
-current restrictions is less regular for Victoria.
-COVID-19, among other factors, has driven the regional reference price for
-electricity to a 5 year low.</p>
-<p>2020 has been a year of uncertainty and the need for good quality forecasts has
-increased. Prior to making any predictions about the future it is imperative
-that the data is explored and key drivers for change are understood. Even then,
-unprecedented changes make forecasting even more difficult. Future posts may 
-look into household demand and/or the influence oil price has on RRP.</p>
+<p>In this blog post I provided an overview of one way to develop a benchmark model
+and use it to track improvements made by other models. Following this procedure
+allows <strong>end users</strong> to follow to model development process and identify
+shortcomings and priorities. It is shown that the MLP ANN which accounts for the
+day of the week and holidays significantly outperforms the LSTM and benchmark 
+model.</p>
+<p>You may have noticed that I did not test the model using Victorian electricity
+demand data for 2019 onward. Preventing test data from being used in model
+development enables us to make more reliable forecasts. Next week I will outline
+procedures to <strong>improve forecasting capability</strong> during uncertain times.</p>
 
     </div>
 
@@ -1125,7 +1136,7 @@ look into household demand and/or the influence oil price has on RRP.</p>
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/&amp;text=Learning%20from%20Electricity%20Demand%20Data%20During%20A%20Pandemic%20-%20Part%20A" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/&amp;text=Learning%20from%20Electricity%20Demand%20Data%20During%20A%20Pandemic%20-%20Part%20B" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -1138,7 +1149,7 @@ look into household demand and/or the influence oil price has on RRP.</p>
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/&amp;t=Learning%20from%20Electricity%20Demand%20Data%20During%20A%20Pandemic%20-%20Part%20A" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/&amp;t=Learning%20from%20Electricity%20Demand%20Data%20During%20A%20Pandemic%20-%20Part%20B" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -1151,7 +1162,7 @@ look into household demand and/or the influence oil price has on RRP.</p>
       
       
       <li>
-        <a href="mailto:?subject=Learning%20from%20Electricity%20Demand%20Data%20During%20A%20Pandemic%20-%20Part%20A&amp;body=https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Learning%20from%20Electricity%20Demand%20Data%20During%20A%20Pandemic%20-%20Part%20B&amp;body=https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -1164,7 +1175,7 @@ look into household demand and/or the influence oil price has on RRP.</p>
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/&amp;title=Learning%20from%20Electricity%20Demand%20Data%20During%20A%20Pandemic%20-%20Part%20A" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/&amp;title=Learning%20from%20Electricity%20Demand%20Data%20During%20A%20Pandemic%20-%20Part%20B" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -1177,7 +1188,7 @@ look into household demand and/or the influence oil price has on RRP.</p>
       
       
       <li>
-        <a href="whatsapp://send?text=Learning%20from%20Electricity%20Demand%20Data%20During%20A%20Pandemic%20-%20Part%20A%20https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="whatsapp://send?text=Learning%20from%20Electricity%20Demand%20Data%20During%20A%20Pandemic%20-%20Part%20B%20https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -1190,7 +1201,7 @@ look into household demand and/or the influence oil price has on RRP.</p>
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/&amp;title=Learning%20from%20Electricity%20Demand%20Data%20During%20A%20Pandemic%20-%20Part%20A" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/&amp;title=Learning%20from%20Electricity%20Demand%20Data%20During%20A%20Pandemic%20-%20Part%20B" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
