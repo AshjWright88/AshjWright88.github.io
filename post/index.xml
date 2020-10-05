@@ -65,17 +65,17 @@ complexity grows.&lt;/p&gt;
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/model_track_hu3a8eb10c2cf40985c1926c233b651109_120457_2000x2000_fit_lanczos_2.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/model_track_hu1ddcf30f15b30bea041f1c8e13e217d9_123517_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/model_track_hu3a8eb10c2cf40985c1926c233b651109_120457_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1833&#34; height=&#34;742&#34;&gt;
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/model_track_hu1ddcf30f15b30bea041f1c8e13e217d9_123517_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1833&#34; height=&#34;742&#34;&gt;
 &lt;/a&gt;
 
 
 
 &lt;/figure&gt;
 
-&lt;p&gt;&lt;em&gt;Model performance is greatest when the mean absolute percentage error reaches zero&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Model performance is greatest when the mean absolute percentage error reaches zero.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Key takeaway messages from tracking model development include:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Both the MLP and LSTM &lt;strong&gt;outperform&lt;/strong&gt; the benchmark model.&lt;/li&gt;
@@ -135,16 +135,16 @@ an appropriate model.&lt;/p&gt;
 &lt;p&gt;Key takeaway messages from reviewing the decomposed electricity demand for Victoria
 include:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;From 2014 to 2018 there is a slight &lt;strong&gt;downward trend&lt;/strong&gt; in electricity demand,
+&lt;li&gt;From 2014 to 2019 there is a slight &lt;strong&gt;downward trend&lt;/strong&gt; in electricity demand,
 this may be a result of &lt;strong&gt;electricity efficiency&lt;/strong&gt; measures.&lt;/li&gt;
-&lt;li&gt;There is a clear yearly seasonal component, this is likely to be a result of
-seasonal fluctuations in &lt;strong&gt;temperature&lt;/strong&gt; and the subsequent heating and cooling demand.&lt;/li&gt;
+&lt;li&gt;There is a clear yearly seasonal component that is likely to be a result of
+seasonal fluctuations in &lt;strong&gt;temperature&lt;/strong&gt; and subsequent heating and cooling demand.&lt;/li&gt;
 &lt;li&gt;The residuals show that errors tend to &lt;strong&gt;peak&lt;/strong&gt; at the beginning of the year.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;benchmark-model&#34;&gt;&lt;strong&gt;Benchmark Model&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;Upon reviewing 
 &lt;a href=&#34;https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0194889&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Statistical and Machine Learning forecasting methods&lt;/a&gt;
-we can see that exponential smoothing models commonly outperformed other
+we can see that exponential smoothing models commonly outperform other
 statistical and machine learning models. Well suited to model seasonality and
 trend we use the Holt - Winters triple exponential smoother as our benchmark.&lt;/p&gt;
 
@@ -187,8 +187,8 @@ trend we use the Holt - Winters triple exponential smoother as our benchmark.&lt
 &lt;ol&gt;
 &lt;li&gt;The benchmark model captures the &lt;strong&gt;annual seasonality&lt;/strong&gt;.&lt;/li&gt;
 &lt;li&gt;Residuals in training still show errors &lt;strong&gt;peaking&lt;/strong&gt; at the start of the year.&lt;/li&gt;
-&lt;li&gt;The residuals in development show a &lt;strong&gt;weekly pattern&lt;/strong&gt; which is potentially
-a result of lower electricity demand on the weekend.&lt;/li&gt;
+&lt;li&gt;The residuals in development show a &lt;strong&gt;weekly pattern&lt;/strong&gt; which is most due
+to lower electricity demand on weekends.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;long-short-term-memory-recurrent-neural-network&#34;&gt;&lt;strong&gt;Long Short-Term Memory Recurrent Neural Network&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;The LSTM RNN is a popular choice for time series forecasting.
@@ -221,10 +221,10 @@ It is assumed that we will have a good estimate of the next day&amp;rsquo;s weat
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/LSTM_weather_hub9fdcee5a170e9fef984b0e5133c2470_495830_2000x2000_fit_lanczos_2.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/LSTM_weather_huf44491e25a06a8ebffd69839f7bb1b4a_489688_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/LSTM_weather_hub9fdcee5a170e9fef984b0e5133c2470_495830_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1931&#34; height=&#34;1460&#34;&gt;
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/LSTM_weather_huf44491e25a06a8ebffd69839f7bb1b4a_489688_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1931&#34; height=&#34;1460&#34;&gt;
 &lt;/a&gt;
 
 
@@ -236,13 +236,13 @@ It is assumed that we will have a good estimate of the next day&amp;rsquo;s weat
 &lt;li&gt;The &lt;strong&gt;LSTM&lt;/strong&gt; significantly out-performs the benchmark model capturing peak demand much better.&lt;/li&gt;
 &lt;li&gt;The residuals in training show that there is a &lt;strong&gt;pattern&lt;/strong&gt; to the errors. These
 peaks are likely to be around holiday periods.&lt;/li&gt;
-&lt;li&gt;The residuals in development still show a &lt;strong&gt;weekly pattern&lt;/strong&gt;. This is likely to be
-a result of lower electricity demand on the weekend.&lt;/li&gt;
+&lt;li&gt;The residuals in development still show a &lt;strong&gt;weekly pattern&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;multilayer-perceptron-artificial-neural-network&#34;&gt;&lt;strong&gt;Multilayer Perceptron Artificial Neural Network&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;Instead of perceiving electricity demand as a time series model we can treat the
-model as a function of the past 7 days for weather, day of the week and year,
-and holiday period. The MLP ANN is well suited to this task.&lt;/p&gt;
+&lt;p&gt;Instead of perceiving electricity demand as a time series model we can develop a
+model which forecasts electricity demand as a function of the past 7 days for 
+weather, day of the week and year, and holiday period. The MLP ANN is well
+suited to this task.&lt;/p&gt;
 
 
 
@@ -269,10 +269,10 @@ and holiday period. The MLP ANN is well suited to this task.&lt;/p&gt;
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/MLP_all_hu50233b4b27128dab9f83507a938f176a_475557_2000x2000_fit_lanczos_2.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/MLP_all_hu6a4733eca27246baf69e795ff3a7679b_475811_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/MLP_all_hu50233b4b27128dab9f83507a938f176a_475557_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1931&#34; height=&#34;1460&#34;&gt;
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/MLP_all_hu6a4733eca27246baf69e795ff3a7679b_475811_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1931&#34; height=&#34;1460&#34;&gt;
 &lt;/a&gt;
 
 
@@ -281,7 +281,7 @@ and holiday period. The MLP ANN is well suited to this task.&lt;/p&gt;
 
 &lt;p&gt;The key takeaway messages from reviewing MLP model performance are:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Including days of the year which &lt;strong&gt;account for behavioral&lt;/strong&gt; changes commonly
+&lt;li&gt;Including weekends and holidays which &lt;strong&gt;account for behavioral&lt;/strong&gt; changes commonly
 associated with changes to electricity demand significantly improves performance.&lt;/li&gt;
 &lt;li&gt;The model tends to both &lt;strong&gt;under and over-predict peaks and troughs&lt;/strong&gt;. An 
 alternate loss function may help this.&lt;/li&gt;
@@ -292,7 +292,7 @@ expect electricity demand during the &lt;strong&gt;pandemic&lt;/strong&gt; to be
 &lt;p&gt;In this blog post I provided an overview of one way to develop a benchmark model
 and use it to track improvements made by other models. Following this procedure
 allows &lt;strong&gt;end users&lt;/strong&gt; to follow to model development process and identify
-shortcomings and priorities. It is shown that the MLP ANN which accounts for the
+shortcomings and priorities. It is shown that the MLP which accounts for the
 day of the week and holidays significantly outperforms the LSTM and benchmark 
 model.&lt;/p&gt;
 &lt;p&gt;You may have noticed that I did not test the model using Victorian electricity
