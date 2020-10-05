@@ -17,8 +17,7 @@
       <link>https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/</link>
       <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/</guid>
-      <description>&lt;h2 id=&#34;model-development&#34;&gt;&lt;strong&gt;Model Development&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;Using the daily Victorian electricity demand as an example, this blog will
+      <description>&lt;p&gt;Using the daily Victorian electricity demand as an example, this blog will
 outline procedures to &lt;strong&gt;develop a forecasting model&lt;/strong&gt;. To enable scheduling of
 energy supply for the next day I develop one day ahead forecasts.
 In my next post I will use this model to outline procedures 
