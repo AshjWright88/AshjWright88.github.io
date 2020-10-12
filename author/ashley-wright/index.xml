@@ -5,20 +5,12 @@
     <link>https://AshjWright88.github.io/author/ashley-wright/</link>
       <atom:link href="https://AshjWright88.github.io/author/ashley-wright/index.xml" rel="self" type="application/rss+xml" />
     <description>Ashley Wright</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jul 2017 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
     <image>
       <url>https://AshjWright88.github.io/media/AWlogo.png</url>
       <title>Ashley Wright</title>
       <link>https://AshjWright88.github.io/author/ashley-wright/</link>
     </image>
-    
-    <item>
-      <title>A comparison of the discrete cosine and wavelet transforms for hydrologic model input data reduction</title>
-      <link>https://AshjWright88.github.io/publication/wright-2017/</link>
-      <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
-      <guid>https://AshjWright88.github.io/publication/wright-2017/</guid>
-      <description></description>
-    </item>
     
   </channel>
 </rss>

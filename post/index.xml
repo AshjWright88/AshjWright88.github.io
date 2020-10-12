@@ -5,12 +5,298 @@
     <link>https://AshjWright88.github.io/post/</link>
       <atom:link href="https://AshjWright88.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 05 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 12 Oct 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://AshjWright88.github.io/media/AWlogo.png</url>
       <title>Posts</title>
       <link>https://AshjWright88.github.io/post/</link>
     </image>
+    
+    <item>
+      <title>Learning from Electricity Demand Data During A Pandemic - Part C</title>
+      <link>https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/</link>
+      <pubDate>Mon, 12 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/</guid>
+      <description>&lt;p&gt;To &lt;strong&gt;improve forecasting capability&lt;/strong&gt; during uncertain times it is necessary to
+both understand and address &lt;strong&gt;model drift&lt;/strong&gt;. The hypothesis I aim to test is that
+electricity demand forecasts will be more prone to errors in states that have
+seen more severe and prolonged restrictions as a result of COVID-19.&lt;/p&gt;
+&lt;p&gt;Using daily electricity demand for Vic, NSW, Tas, SA, and QLD this
+blog will demonstrate:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;What model drift is.&lt;/li&gt;
+&lt;li&gt;The importance of using train, development, and test splits.&lt;/li&gt;
+&lt;li&gt;The estimated operational performance of day ahead forecasts using MLP ANN&amp;rsquo;s.&lt;/li&gt;
+&lt;li&gt;Model drift in an operational setting.&lt;/li&gt;
+&lt;li&gt;That tracking model performance and regularly re-training models,
+errors can be reduced by an average of &lt;strong&gt;9.49%&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;what-is-model-drift&#34;&gt;&lt;strong&gt;What is model drift?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Model drift is the degradation of forecasting capability over time. One method to tackle this problem
+is to re-train forecasting models. By scaling the errors for each forecasting
+model to 100 we can track how each model drifts.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/model_drift_traindevtest_hu6bda5315452f2bba43c682f7fb3d9807_429069_2000x2000_fit_lanczos_2.png&#34; &gt;
+
+
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/model_drift_traindevtest_hu6bda5315452f2bba43c682f7fb3d9807_429069_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2776&#34; height=&#34;1250&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Key takeaway messages from tracking model development include:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;NSW, Vic, and QLD forecasting models &lt;strong&gt;drift more significantly&lt;/strong&gt; than Tas and 
+SA.&lt;/li&gt;
+&lt;li&gt;Relative errors fluctuate around 100 during the training period.&lt;/li&gt;
+&lt;li&gt;Model drift can &lt;em&gt;significantly degrade&lt;/em&gt; forecasting performance in an
+operational setting and must be addressed.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;At this point it is essential to ask &lt;strong&gt;&amp;ldquo;what causes model drift?&amp;quot;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;the-cause-of-model-drift-and-importance-of-train-dev-test-splits&#34;&gt;&lt;strong&gt;The cause of model drift and importance of train, dev, test splits.&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Model drift results from using a forecasting model that was developed using one 
+data set to make forecasts for a data set with different statistical properties.
+This commonly occurs when we make forecasts in &lt;strong&gt;uncertain or unprecedented times&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;To make reliable forecasts it is necessary to develop models using training, development, and 
+test sets.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The training set is used to update model parameters and assess 
+performance when the &lt;strong&gt;model has seen the data&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;The training and development sets are used to tune
+&lt;strong&gt;hyper-parameters&lt;/strong&gt;. 
+3.The test set is used to &lt;strong&gt;assess performance&lt;/strong&gt; on a data set
+the model has &lt;strong&gt;not seen&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Using a scaled density plot we can visualise the cause of model drift and 
+importance of train, dev, test splits.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/density_hu2cc116be57d158e16610d0f5cdea4993_209571_2000x2000_fit_lanczos_2.png&#34; &gt;
+
+
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/density_hu2cc116be57d158e16610d0f5cdea4993_209571_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2465&#34; height=&#34;1287&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Key takeaway messages from reviewing the scaled density plots for Victoria
+include:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The density function for each data set is &lt;strong&gt;significantly different&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;If only a train and test set are used then there is &lt;strong&gt;no way&lt;/strong&gt; to assess 
+performance on an &lt;strong&gt;unknown&lt;/strong&gt; data set.&lt;/li&gt;
+&lt;li&gt;We are likely to see model drift in the Dev and Test sets.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;estimating-operational-performance-of-mlp-anns-to-predict-electricity-demand&#34;&gt;&lt;strong&gt;Estimating operational performance of MLP ANN&amp;rsquo;s to predict electricity demand.&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;The train and development sets were used tune hyper-parameters. Dropout of 20% was
+used to avoid over-fitting and a 20-neuron layer performed best. Using the test 
+set we can now estimate model performance in an operational setting .&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/mape_dev_hu9c81b25529adc4c233d2787a7ad60e1d_97664_2000x2000_fit_lanczos_2.png&#34; &gt;
+
+
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/mape_dev_hu9c81b25529adc4c233d2787a7ad60e1d_97664_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2424&#34; height=&#34;1250&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;strong&gt;Low mean absolute percentage error indicates better model performance&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Key takeaway messages from reviewing model performance in each state include:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Model performance using the test set is &lt;strong&gt;indicative of operational performance&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Models perform best using the training data set.&lt;/li&gt;
+&lt;li&gt;States that consume more electricity have lower mean absolute percentage errors,
+this is a result of the error metric used.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;model-drift-in-an-operational-setting&#34;&gt;&lt;strong&gt;Model drift in an operational setting.&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Prior to making operational forecasts it is now wise to take advantage of all
+the data available and re-train the model.&lt;/p&gt;
+&lt;p&gt;Using 2020 as a forecast year we can now test the initial hypothesis that states
+which have seen more severe and prolonged restrictions as a result of COVID-19
+will be more prone to errors.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/model_drift_forecast_hu08c883a54de4c0cf7e4b9c0eefbf8cdb_416139_2000x2000_fit_lanczos_2.png&#34; &gt;
+
+
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/model_drift_forecast_hu08c883a54de4c0cf7e4b9c0eefbf8cdb_416139_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2820&#34; height=&#34;1243&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;The key takeaway messages from reviewing model performance are:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;When restrictions were put in place relative errors &lt;strong&gt;do not change significantly&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;The models are &lt;strong&gt;quite susceptible to drift&lt;/strong&gt;; this indicates that electricity demand
+patterns are quite different for training and operational data sets.&lt;/li&gt;
+&lt;li&gt;More pronounced changes may be observable at the 30 min timescale.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;reduction-in-operational-forecast-errors-by-tracking-model-performance-and-re-training-models&#34;&gt;&lt;strong&gt;Reduction in operational forecast errors by tracking model performance and re-training models.&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;As the scale of the model grows both the resources required and the time taken to re-train 
+models need to be weighed against the end-user’s tolerance for error.&lt;/p&gt;
+&lt;p&gt;Using data up until the start of September 2020 we can now
+re-train our models and estimate the value gained by re-training the models instead
+of leaving them to drift.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/mape_forecast_hu8e0d5073779678850da5aec551805891_119829_2000x2000_fit_lanczos_2.png&#34; &gt;
+
+
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/mape_forecast_hu8e0d5073779678850da5aec551805891_119829_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2424&#34; height=&#34;1250&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;The key takeaway messages from reviewing model performance for each state in September 2020 include:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;There is no crystal ball that allows us to predict the future.&lt;/li&gt;
+&lt;li&gt;By tracking model drift and re-training our models, reductions in operational forecast errors of
+&lt;strong&gt;9.49%&lt;/strong&gt; can be realised.&lt;/li&gt;
+&lt;li&gt;Operational performance is similar to that estimated earlier.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;I have provided an overview of one way to track and account for model
+drift. Following this procedure allows &lt;strong&gt;end-users&lt;/strong&gt; to track operational model
+performance and schedule re-training when a desired threshold is met.&lt;/p&gt;
+&lt;p&gt;We tracked model drift using 2020 electricity demand data. It is not entirely clear
+if the increase in model errors can be attributed to restrictions put in place to
+combat COVID-19. Developing forecast models at greater resolution may provide
+more insights.&lt;/p&gt;
+&lt;p&gt;If you would like to access my GitHub repository which I used to develop these blogs, please contact me.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Learning from Electricity Demand Data During A Pandemic - Part B</title>
