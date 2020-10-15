@@ -888,10 +888,10 @@ model to 100 we can track how each model drifts.</p>
 
 <p>Key takeaway messages from tracking model development include:</p>
 <ol>
-<li><strong>Drift</strong> occurs slowly there is a small increase in errors as the model progressively
+<li><strong>Drift</strong> occurs slowly. There is a small increase in errors as the model progressively
 makes predictions on development and test data.</li>
 <li>Relative errors fluctuate around 100 during the training period.</li>
-<li>Model drift indicates how our model is likely to perform further into the future.</li>
+<li>Model drift can be used to indicate how our model is likely to perform further into the future.</li>
 </ol>
 <p>At this point it is essential to ask <strong>&ldquo;what causes model drift?&quot;</strong></p>
 <h2 id="the-cause-of-model-drift-and-importance-of-train-dev-test-splits"><strong>The cause of model drift and importance of train, dev, test splits.</strong></h2>
@@ -955,7 +955,7 @@ performance on an <strong>unknown</strong> data set.</li>
 <li>We are likely to see model drift in the Dev and Test sets.</li>
 </ol>
 <h2 id="estimating-operational-performance-of-mlp-anns-to-predict-electricity-demand"><strong>Estimating operational performance of MLP ANN&rsquo;s to predict electricity demand.</strong></h2>
-<p>The train and development sets were used tune hyper-parameters. A a 6-neuron layer
+<p>The train and development sets were used tune hyper-parameters. A 6-neuron layer
 and Dropout of 8% were used to avoid over-fitting. Using the test 
 set we can now estimate model performance in an operational setting.</p>
 <p>
@@ -1048,7 +1048,7 @@ will be more prone to errors.</p>
 <ol>
 <li>Victorian electricity demand forecasts tend to drift more than others. Is this a result
 of tighter restrictions?</li>
-<li>Errors tend to have a seasonal component, this indicates further improvements can be made to
+<li>Errors tend to have a seasonal component; this indicates further improvements can be made to
 the model and that we cannot assume a jump in errors is caused by tighter restrictions.</li>
 <li>More pronounced changes may be observable at the 30 min timescale.</li>
 </ol>

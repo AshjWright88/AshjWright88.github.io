@@ -73,10 +73,10 @@ model to 100 we can track how each model drifts.&lt;/p&gt;
 
 &lt;p&gt;Key takeaway messages from tracking model development include:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Drift&lt;/strong&gt; occurs slowly there is a small increase in errors as the model progressively
+&lt;li&gt;&lt;strong&gt;Drift&lt;/strong&gt; occurs slowly. There is a small increase in errors as the model progressively
 makes predictions on development and test data.&lt;/li&gt;
 &lt;li&gt;Relative errors fluctuate around 100 during the training period.&lt;/li&gt;
-&lt;li&gt;Model drift indicates how our model is likely to perform further into the future.&lt;/li&gt;
+&lt;li&gt;Model drift can be used to indicate how our model is likely to perform further into the future.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;At this point it is essential to ask &lt;strong&gt;&amp;ldquo;what causes model drift?&amp;quot;&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;the-cause-of-model-drift-and-importance-of-train-dev-test-splits&#34;&gt;&lt;strong&gt;The cause of model drift and importance of train, dev, test splits.&lt;/strong&gt;&lt;/h2&gt;
@@ -140,7 +140,7 @@ performance on an &lt;strong&gt;unknown&lt;/strong&gt; data set.&lt;/li&gt;
 &lt;li&gt;We are likely to see model drift in the Dev and Test sets.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;estimating-operational-performance-of-mlp-anns-to-predict-electricity-demand&#34;&gt;&lt;strong&gt;Estimating operational performance of MLP ANN&amp;rsquo;s to predict electricity demand.&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;The train and development sets were used tune hyper-parameters. A a 6-neuron layer
+&lt;p&gt;The train and development sets were used tune hyper-parameters. A 6-neuron layer
 and Dropout of 8% were used to avoid over-fitting. Using the test 
 set we can now estimate model performance in an operational setting.&lt;/p&gt;
 &lt;p&gt;
@@ -233,7 +233,7 @@ will be more prone to errors.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Victorian electricity demand forecasts tend to drift more than others. Is this a result
 of tighter restrictions?&lt;/li&gt;
-&lt;li&gt;Errors tend to have a seasonal component, this indicates further improvements can be made to
+&lt;li&gt;Errors tend to have a seasonal component; this indicates further improvements can be made to
 the model and that we cannot assume a jump in errors is caused by tighter restrictions.&lt;/li&gt;
 &lt;li&gt;More pronounced changes may be observable at the 30 min timescale.&lt;/li&gt;
 &lt;/ol&gt;
@@ -567,7 +567,7 @@ suited to this task.&lt;/p&gt;
 
 &lt;p&gt;The key takeaway messages from reviewing MLP model performance are:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Including weekends and holidays which &lt;strong&gt;account for behavioral&lt;/strong&gt; changes commonly
+&lt;li&gt;Including weekends and holidays which &lt;strong&gt;account for behavioural&lt;/strong&gt; changes commonly
 associated with changes to electricity demand significantly improves performance.&lt;/li&gt;
 &lt;li&gt;The model tends to both &lt;strong&gt;under and over-predict peaks and troughs&lt;/strong&gt;. An 
 alternate loss function may help this.&lt;/li&gt;
