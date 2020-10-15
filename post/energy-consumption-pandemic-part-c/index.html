@@ -317,7 +317,7 @@
     
       <meta property="article:published_time" content="2020-10-12T00:00:00&#43;00:00">
     
-    <meta property="article:modified_time" content="2020-10-12T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2020-10-15T00:00:00&#43;00:00">
   
 
   
@@ -350,7 +350,7 @@
   ],
   
   "datePublished": "2020-10-12T00:00:00Z",
-  "dateModified": "2020-10-12T00:00:00Z",
+  "dateModified": "2020-10-15T00:00:00Z",
   
   "author": {
     "@type": "Person",
@@ -777,8 +777,10 @@
     
     
       
+          Last updated on
+      
     
-    Oct 12, 2020
+    Oct 15, 2020
   </span>
   
 
@@ -787,7 +789,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    4 min read
+    5 min read
   </span>
   
 
@@ -842,7 +844,7 @@ blog will demonstrate:</p>
 <li>The estimated operational performance of day ahead forecasts using MLP ANN&rsquo;s.</li>
 <li>Model drift in an operational setting.</li>
 <li>That tracking model performance and regularly re-training models,
-errors can be reduced by an average of <strong>9.49%</strong>.</li>
+errors can be reduced by an average of <strong>7.36%</strong>.</li>
 </ol>
 <h2 id="what-is-model-drift"><strong>What is model drift?</strong></h2>
 <p>Model drift is the degradation of forecasting capability over time. One method to tackle this problem
@@ -874,10 +876,10 @@ model to 100 we can track how each model drifts.</p>
 <figure >
 
 
-  <a data-fancybox="" href="/post/energy-consumption-pandemic-part-c/model_drift_traindevtest_hu6bda5315452f2bba43c682f7fb3d9807_429069_2000x2000_fit_lanczos_2.png" >
+  <a data-fancybox="" href="/post/energy-consumption-pandemic-part-c/model_drift_traindevtest_hud310aecc835ce9f9c7758ecea5f02ed4_827001_2000x2000_fit_lanczos_2.png" >
 
 
-  <img data-src="/post/energy-consumption-pandemic-part-c/model_drift_traindevtest_hu6bda5315452f2bba43c682f7fb3d9807_429069_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="2776" height="1250">
+  <img data-src="/post/energy-consumption-pandemic-part-c/model_drift_traindevtest_hud310aecc835ce9f9c7758ecea5f02ed4_827001_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="2769" height="1250">
 </a>
 
 
@@ -886,11 +888,10 @@ model to 100 we can track how each model drifts.</p>
 
 <p>Key takeaway messages from tracking model development include:</p>
 <ol>
-<li>NSW, Vic, and QLD forecasting models <strong>drift more significantly</strong> than Tas and 
-SA.</li>
+<li><strong>Drift</strong> occurs slowly there is a small increase in errors as the model progressively
+makes predictions on development and test data.</li>
 <li>Relative errors fluctuate around 100 during the training period.</li>
-<li>Model drift can <em>significantly degrade</em> forecasting performance in an
-operational setting and must be addressed.</li>
+<li>Model drift indicates how our model is likely to perform further into the future.</li>
 </ol>
 <p>At this point it is essential to ask <strong>&ldquo;what causes model drift?&quot;</strong></p>
 <h2 id="the-cause-of-model-drift-and-importance-of-train-dev-test-splits"><strong>The cause of model drift and importance of train, dev, test splits.</strong></h2>
@@ -935,10 +936,10 @@ importance of train, dev, test splits.</p>
 <figure >
 
 
-  <a data-fancybox="" href="/post/energy-consumption-pandemic-part-c/density_hu2cc116be57d158e16610d0f5cdea4993_209571_2000x2000_fit_lanczos_2.png" >
+  <a data-fancybox="" href="/post/energy-consumption-pandemic-part-c/density_hu2cc116be57d158e16610d0f5cdea4993_209589_2000x2000_fit_lanczos_2.png" >
 
 
-  <img data-src="/post/energy-consumption-pandemic-part-c/density_hu2cc116be57d158e16610d0f5cdea4993_209571_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="2465" height="1287">
+  <img data-src="/post/energy-consumption-pandemic-part-c/density_hu2cc116be57d158e16610d0f5cdea4993_209589_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="2465" height="1287">
 </a>
 
 
@@ -954,9 +955,9 @@ performance on an <strong>unknown</strong> data set.</li>
 <li>We are likely to see model drift in the Dev and Test sets.</li>
 </ol>
 <h2 id="estimating-operational-performance-of-mlp-anns-to-predict-electricity-demand"><strong>Estimating operational performance of MLP ANN&rsquo;s to predict electricity demand.</strong></h2>
-<p>The train and development sets were used tune hyper-parameters. Dropout of 20% was
-used to avoid over-fitting and a 20-neuron layer performed best. Using the test 
-set we can now estimate model performance in an operational setting .</p>
+<p>The train and development sets were used tune hyper-parameters. A a 6-neuron layer
+and Dropout of 8% were used to avoid over-fitting. Using the test 
+set we can now estimate model performance in an operational setting.</p>
 <p>
 
 
@@ -983,10 +984,10 @@ set we can now estimate model performance in an operational setting .</p>
 <figure >
 
 
-  <a data-fancybox="" href="/post/energy-consumption-pandemic-part-c/mape_dev_hu9c81b25529adc4c233d2787a7ad60e1d_97664_2000x2000_fit_lanczos_2.png" >
+  <a data-fancybox="" href="/post/energy-consumption-pandemic-part-c/mape_dev_hu38743e526657035213a1cfc331cff797_97314_2000x2000_fit_lanczos_2.png" >
 
 
-  <img data-src="/post/energy-consumption-pandemic-part-c/mape_dev_hu9c81b25529adc4c233d2787a7ad60e1d_97664_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="2424" height="1250">
+  <img data-src="/post/energy-consumption-pandemic-part-c/mape_dev_hu38743e526657035213a1cfc331cff797_97314_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="2424" height="1250">
 </a>
 
 
@@ -1033,10 +1034,10 @@ will be more prone to errors.</p>
 <figure >
 
 
-  <a data-fancybox="" href="/post/energy-consumption-pandemic-part-c/model_drift_forecast_hu08c883a54de4c0cf7e4b9c0eefbf8cdb_416139_2000x2000_fit_lanczos_2.png" >
+  <a data-fancybox="" href="/post/energy-consumption-pandemic-part-c/model_drift_forecast_hu243a672745015b6d1f88b2442d26b6ea_1012115_2000x2000_fit_lanczos_2.png" >
 
 
-  <img data-src="/post/energy-consumption-pandemic-part-c/model_drift_forecast_hu08c883a54de4c0cf7e4b9c0eefbf8cdb_416139_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="2820" height="1243">
+  <img data-src="/post/energy-consumption-pandemic-part-c/model_drift_forecast_hu243a672745015b6d1f88b2442d26b6ea_1012115_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="2820" height="1243">
 </a>
 
 
@@ -1045,9 +1046,10 @@ will be more prone to errors.</p>
 
 <p>The key takeaway messages from reviewing model performance are:</p>
 <ol>
-<li>When restrictions were put in place relative errors <strong>do not change significantly</strong>.</li>
-<li>The models are <strong>quite susceptible to drift</strong>; this indicates that electricity demand
-patterns are quite different for training and operational data sets.</li>
+<li>Victorian electricity demand forecasts tend to drift more than others. Is this a result
+of tighter restrictions?</li>
+<li>Errors tend to have a seasonal component, this indicates further improvements can be made to
+the model and that we cannot assume a jump in errors is caused by tighter restrictions.</li>
 <li>More pronounced changes may be observable at the 30 min timescale.</li>
 </ol>
 <h2 id="reduction-in-operational-forecast-errors-by-tracking-model-performance-and-re-training-models"><strong>Reduction in operational forecast errors by tracking model performance and re-training models.</strong></h2>
@@ -1082,10 +1084,10 @@ of leaving them to drift.</p>
 <figure >
 
 
-  <a data-fancybox="" href="/post/energy-consumption-pandemic-part-c/mape_forecast_hu8e0d5073779678850da5aec551805891_119829_2000x2000_fit_lanczos_2.png" >
+  <a data-fancybox="" href="/post/energy-consumption-pandemic-part-c/mape_forecast_hu128da97d4a693d6cfcc9aa6861169c15_120416_2000x2000_fit_lanczos_2.png" >
 
 
-  <img data-src="/post/energy-consumption-pandemic-part-c/mape_forecast_hu8e0d5073779678850da5aec551805891_119829_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="2424" height="1250">
+  <img data-src="/post/energy-consumption-pandemic-part-c/mape_forecast_hu128da97d4a693d6cfcc9aa6861169c15_120416_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="2424" height="1250">
 </a>
 
 
@@ -1096,7 +1098,7 @@ of leaving them to drift.</p>
 <ol>
 <li>There is no crystal ball that allows us to predict the future.</li>
 <li>By tracking model drift and re-training our models, reductions in operational forecast errors of
-<strong>9.49%</strong> can be realised.</li>
+<strong>7.36%</strong> can be realised.</li>
 <li>Operational performance is similar to that estimated earlier.</li>
 </ol>
 <h2 id="summary">Summary</h2>

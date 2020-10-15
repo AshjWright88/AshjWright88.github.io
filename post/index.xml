@@ -29,7 +29,7 @@ blog will demonstrate:&lt;/p&gt;
 &lt;li&gt;The estimated operational performance of day ahead forecasts using MLP ANN&amp;rsquo;s.&lt;/li&gt;
 &lt;li&gt;Model drift in an operational setting.&lt;/li&gt;
 &lt;li&gt;That tracking model performance and regularly re-training models,
-errors can be reduced by an average of &lt;strong&gt;9.49%&lt;/strong&gt;.&lt;/li&gt;
+errors can be reduced by an average of &lt;strong&gt;7.36%&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;what-is-model-drift&#34;&gt;&lt;strong&gt;What is model drift?&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;Model drift is the degradation of forecasting capability over time. One method to tackle this problem
@@ -61,10 +61,10 @@ model to 100 we can track how each model drifts.&lt;/p&gt;
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/model_drift_traindevtest_hu6bda5315452f2bba43c682f7fb3d9807_429069_2000x2000_fit_lanczos_2.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/model_drift_traindevtest_hud310aecc835ce9f9c7758ecea5f02ed4_827001_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/model_drift_traindevtest_hu6bda5315452f2bba43c682f7fb3d9807_429069_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2776&#34; height=&#34;1250&#34;&gt;
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/model_drift_traindevtest_hud310aecc835ce9f9c7758ecea5f02ed4_827001_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2769&#34; height=&#34;1250&#34;&gt;
 &lt;/a&gt;
 
 
@@ -73,11 +73,10 @@ model to 100 we can track how each model drifts.&lt;/p&gt;
 
 &lt;p&gt;Key takeaway messages from tracking model development include:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;NSW, Vic, and QLD forecasting models &lt;strong&gt;drift more significantly&lt;/strong&gt; than Tas and 
-SA.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Drift&lt;/strong&gt; occurs slowly there is a small increase in errors as the model progressively
+makes predictions on development and test data.&lt;/li&gt;
 &lt;li&gt;Relative errors fluctuate around 100 during the training period.&lt;/li&gt;
-&lt;li&gt;Model drift can &lt;em&gt;significantly degrade&lt;/em&gt; forecasting performance in an
-operational setting and must be addressed.&lt;/li&gt;
+&lt;li&gt;Model drift indicates how our model is likely to perform further into the future.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;At this point it is essential to ask &lt;strong&gt;&amp;ldquo;what causes model drift?&amp;quot;&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;the-cause-of-model-drift-and-importance-of-train-dev-test-splits&#34;&gt;&lt;strong&gt;The cause of model drift and importance of train, dev, test splits.&lt;/strong&gt;&lt;/h2&gt;
@@ -122,10 +121,10 @@ importance of train, dev, test splits.&lt;/p&gt;
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/density_hu2cc116be57d158e16610d0f5cdea4993_209571_2000x2000_fit_lanczos_2.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/density_hu2cc116be57d158e16610d0f5cdea4993_209589_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/density_hu2cc116be57d158e16610d0f5cdea4993_209571_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2465&#34; height=&#34;1287&#34;&gt;
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/density_hu2cc116be57d158e16610d0f5cdea4993_209589_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2465&#34; height=&#34;1287&#34;&gt;
 &lt;/a&gt;
 
 
@@ -141,9 +140,9 @@ performance on an &lt;strong&gt;unknown&lt;/strong&gt; data set.&lt;/li&gt;
 &lt;li&gt;We are likely to see model drift in the Dev and Test sets.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;estimating-operational-performance-of-mlp-anns-to-predict-electricity-demand&#34;&gt;&lt;strong&gt;Estimating operational performance of MLP ANN&amp;rsquo;s to predict electricity demand.&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;The train and development sets were used tune hyper-parameters. Dropout of 20% was
-used to avoid over-fitting and a 20-neuron layer performed best. Using the test 
-set we can now estimate model performance in an operational setting .&lt;/p&gt;
+&lt;p&gt;The train and development sets were used tune hyper-parameters. A a 6-neuron layer
+and Dropout of 8% were used to avoid over-fitting. Using the test 
+set we can now estimate model performance in an operational setting.&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -170,10 +169,10 @@ set we can now estimate model performance in an operational setting .&lt;/p&gt;
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/mape_dev_hu9c81b25529adc4c233d2787a7ad60e1d_97664_2000x2000_fit_lanczos_2.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/mape_dev_hu38743e526657035213a1cfc331cff797_97314_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/mape_dev_hu9c81b25529adc4c233d2787a7ad60e1d_97664_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2424&#34; height=&#34;1250&#34;&gt;
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/mape_dev_hu38743e526657035213a1cfc331cff797_97314_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2424&#34; height=&#34;1250&#34;&gt;
 &lt;/a&gt;
 
 
@@ -220,10 +219,10 @@ will be more prone to errors.&lt;/p&gt;
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/model_drift_forecast_hu08c883a54de4c0cf7e4b9c0eefbf8cdb_416139_2000x2000_fit_lanczos_2.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/model_drift_forecast_hu243a672745015b6d1f88b2442d26b6ea_1012115_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/model_drift_forecast_hu08c883a54de4c0cf7e4b9c0eefbf8cdb_416139_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2820&#34; height=&#34;1243&#34;&gt;
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/model_drift_forecast_hu243a672745015b6d1f88b2442d26b6ea_1012115_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2820&#34; height=&#34;1243&#34;&gt;
 &lt;/a&gt;
 
 
@@ -232,9 +231,10 @@ will be more prone to errors.&lt;/p&gt;
 
 &lt;p&gt;The key takeaway messages from reviewing model performance are:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;When restrictions were put in place relative errors &lt;strong&gt;do not change significantly&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;The models are &lt;strong&gt;quite susceptible to drift&lt;/strong&gt;; this indicates that electricity demand
-patterns are quite different for training and operational data sets.&lt;/li&gt;
+&lt;li&gt;Victorian electricity demand forecasts tend to drift more than others. Is this a result
+of tighter restrictions?&lt;/li&gt;
+&lt;li&gt;Errors tend to have a seasonal component, this indicates further improvements can be made to
+the model and that we cannot assume a jump in errors is caused by tighter restrictions.&lt;/li&gt;
 &lt;li&gt;More pronounced changes may be observable at the 30 min timescale.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;reduction-in-operational-forecast-errors-by-tracking-model-performance-and-re-training-models&#34;&gt;&lt;strong&gt;Reduction in operational forecast errors by tracking model performance and re-training models.&lt;/strong&gt;&lt;/h2&gt;
@@ -269,10 +269,10 @@ of leaving them to drift.&lt;/p&gt;
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/mape_forecast_hu8e0d5073779678850da5aec551805891_119829_2000x2000_fit_lanczos_2.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/mape_forecast_hu128da97d4a693d6cfcc9aa6861169c15_120416_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/mape_forecast_hu8e0d5073779678850da5aec551805891_119829_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2424&#34; height=&#34;1250&#34;&gt;
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/mape_forecast_hu128da97d4a693d6cfcc9aa6861169c15_120416_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2424&#34; height=&#34;1250&#34;&gt;
 &lt;/a&gt;
 
 
@@ -283,7 +283,7 @@ of leaving them to drift.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;There is no crystal ball that allows us to predict the future.&lt;/li&gt;
 &lt;li&gt;By tracking model drift and re-training our models, reductions in operational forecast errors of
-&lt;strong&gt;9.49%&lt;/strong&gt; can be realised.&lt;/li&gt;
+&lt;strong&gt;7.36%&lt;/strong&gt; can be realised.&lt;/li&gt;
 &lt;li&gt;Operational performance is similar to that estimated earlier.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
@@ -351,10 +351,10 @@ complexity grows.&lt;/p&gt;
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/model_track_hu1ddcf30f15b30bea041f1c8e13e217d9_123517_2000x2000_fit_lanczos_2.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/model_track_hud89c1cd304a4592aaacaffd37dba6de6_122726_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/model_track_hu1ddcf30f15b30bea041f1c8e13e217d9_123517_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1833&#34; height=&#34;742&#34;&gt;
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/model_track_hud89c1cd304a4592aaacaffd37dba6de6_122726_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1833&#34; height=&#34;742&#34;&gt;
 &lt;/a&gt;
 
 
@@ -422,7 +422,7 @@ an appropriate model.&lt;/p&gt;
 include:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;From 2014 to 2019 there is a slight &lt;strong&gt;downward trend&lt;/strong&gt; in electricity demand,
-this may be a result of &lt;strong&gt;electricity efficiency&lt;/strong&gt; measures.&lt;/li&gt;
+this may be a result of &lt;strong&gt;electricity efficiency&lt;/strong&gt; measures or an &lt;strong&gt;uptake in solar panels&lt;/strong&gt;.&lt;/li&gt;
 &lt;li&gt;There is a clear yearly seasonal component that is likely to be a result of
 seasonal fluctuations in &lt;strong&gt;temperature&lt;/strong&gt; and subsequent heating and cooling demand.&lt;/li&gt;
 &lt;li&gt;The residuals show that errors tend to &lt;strong&gt;peak&lt;/strong&gt; at the beginning of the year.&lt;/li&gt;
@@ -459,10 +459,10 @@ trend we use the Holt - Winters triple exponential smoother as our benchmark.&lt
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/VIC_ETS_hu728e599515bb3c2864a618ff7962ae2f_542176_2000x2000_fit_lanczos_2.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/VIC_ETS_hu728e599515bb3c2864a618ff7962ae2f_529380_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/VIC_ETS_hu728e599515bb3c2864a618ff7962ae2f_542176_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1931&#34; height=&#34;1460&#34;&gt;
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/VIC_ETS_hu728e599515bb3c2864a618ff7962ae2f_529380_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1931&#34; height=&#34;1460&#34;&gt;
 &lt;/a&gt;
 
 
@@ -507,10 +507,10 @@ It is assumed that we will have a good estimate of the next day&amp;rsquo;s weat
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/LSTM_weather_huf44491e25a06a8ebffd69839f7bb1b4a_489688_2000x2000_fit_lanczos_2.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/LSTM_weather_hufc0f4494b82df1cc5290833d297c20b9_495807_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/LSTM_weather_huf44491e25a06a8ebffd69839f7bb1b4a_489688_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1931&#34; height=&#34;1460&#34;&gt;
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/LSTM_weather_hufc0f4494b82df1cc5290833d297c20b9_495807_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1931&#34; height=&#34;1460&#34;&gt;
 &lt;/a&gt;
 
 
@@ -525,9 +525,9 @@ peaks are likely to be around holiday periods.&lt;/li&gt;
 &lt;li&gt;The residuals in development still show a &lt;strong&gt;weekly pattern&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;multilayer-perceptron-artificial-neural-network&#34;&gt;&lt;strong&gt;Multilayer Perceptron Artificial Neural Network&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;Instead of perceiving electricity demand as a time series model we can develop a
-model which forecasts electricity demand as a function of the past 7 days for 
-weather, day of the week and year, and holiday period. The MLP ANN is well
+&lt;p&gt;Instead of perceiving electricity demand as a time series model we can develop a 
+causal model which forecasts electricity demand as a function of the past 7 days for 
+weather, day of the week and year, holiday period and trend. The MLP ANN is well
 suited to this task.&lt;/p&gt;
 
 
