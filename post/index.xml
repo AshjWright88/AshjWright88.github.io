@@ -188,7 +188,7 @@ to prevent model drift.&lt;/p&gt;
 
 &lt;/figure&gt;
 
-&lt;p&gt;Key takeaways from tracking model development are:&lt;/p&gt;
+&lt;p&gt;Key takeaways from tracking model drift are:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;By tracking model drift average reductions in forecast errors &lt;strong&gt;8.15%&lt;/strong&gt; can be observed.&lt;/li&gt;
 &lt;li&gt;A reduction of errors is not guaranteed.&lt;/li&gt;
