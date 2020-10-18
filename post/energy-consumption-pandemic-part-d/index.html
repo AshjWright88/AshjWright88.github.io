@@ -1,0 +1,1545 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Ashley Wright">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="There are a number of situations in which past data of the observation we are making forecasts for is not available. Possible reasons include time lags between data collection and data availability, and the time taken to quality control data.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://AshjWright88.github.io/post/energy-consumption-pandemic-part-d/">
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-178456499-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-178456499-1', {});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://AshjWright88.github.io/post/energy-consumption-pandemic-part-d/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Ashley Wright">
+  <meta property="og:url" content="https://AshjWright88.github.io/post/energy-consumption-pandemic-part-d/">
+  <meta property="og:title" content="Attributing Forecast Errors to COVID-19 Restrictions | Ashley Wright">
+  <meta property="og:description" content="There are a number of situations in which past data of the observation we are making forecasts for is not available. Possible reasons include time lags between data collection and data availability, and the time taken to quality control data."><meta property="og:image" content="https://AshjWright88.github.io/post/energy-consumption-pandemic-part-d/featured.jpg">
+  <meta property="twitter:image" content="https://AshjWright88.github.io/post/energy-consumption-pandemic-part-d/featured.jpg"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-10-17T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-10-18T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://AshjWright88.github.io/post/energy-consumption-pandemic-part-d/"
+  },
+  "headline": "Attributing Forecast Errors to COVID-19 Restrictions",
+  
+  "image": [
+    "https://AshjWright88.github.io/post/energy-consumption-pandemic-part-d/featured.jpg"
+  ],
+  
+  "datePublished": "2020-10-17T00:00:00Z",
+  "dateModified": "2020-10-18T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Ashley Wright"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Ashley Wright",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://AshjWright88.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "There are a number of situations in which past data of the observation we are making forecasts for is not available. Possible reasons include time lags between data collection and data availability, and the time taken to quality control data."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Attributing Forecast Errors to COVID-19 Restrictions | Ashley Wright</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class=" ">
+
+  
+  
+  
+    <script>window.staDarkLightChooser = true;</script>
+  
+  
+    <script>const isSiteThemeDark = false;</script>
+  
+  
+  <script src="/js/load-theme.js"></script>
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Ashley Wright</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Ashley Wright</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/files/ashleyjwrightcv.pdf"><span>CV</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="article-container pt-3">
+  <h1>Attributing Forecast Errors to COVID-19 Restrictions</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Oct 18, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    4 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class="article-header container-fluid featured-image-wrapper mt-4 mb-4" style="max-width: 1999px; max-height: 2499px;">
+  <div style="position: relative">
+    <img src="/post/energy-consumption-pandemic-part-d/featured.jpg" alt="" class="featured-image">
+    <span class="article-header-caption">Image credit: <a href="https://www.pexels.com/photo/round-mirror-2853432/"><strong>Ethan Sees</strong></a></span>
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p>There are a number of situations in which past data of the observation we are making
+forecasts for is not available. Possible reasons include time lags between data
+collection and data availability, and the time taken to quality control data.</p>
+<p>Consequently, there is value to be gained by developing predictive models which
+do not rely on the availability of recent observations of the variable that we 
+are trying to forecast. Further, by developing a causal MLP neural network
+we are able to attribute changes in electricity consumption to COVID-19 restrictions.</p>
+<p>Using 30 min electricity consumption for Victoria this blog will:</p>
+<ol>
+<li>Develop a feature based causal model used to predict 1 step ahead electricity consumption.</li>
+<li>Add a binary flag which indicates the start of COVID-19 restrictions in Victoria.</li>
+<li>Compare model forecast densities with the observed electricity consumption.</li>
+<li>Use model drift to demonstrate when performance improvements occur.</li>
+<li>Show that by including a binary flag which indicates the start of COVID-19 restrictions
+test errors can be reduced by <strong>5.08%</strong></li>
+</ol>
+<h2 id="using-a-feature-based-causal-mlp-ann-to-forecast-electricity-consumption"><strong>Using a feature based causal MLP ANN to forecast electricity consumption</strong></h2>
+<p>If we are able to account for all the key variables which drive electricity consumption
+then we would not need to incorporate past electricity consumption into our causal model.
+The MLP used to make day one step ahead electricity consumption forecasts uses 6 neurons
+and is trained with dropout of 6%. The variables included are the past 7 days values for 
+average, minimum and maximum temperature, solar radiation, time of the day, day of the week,
+public holiday flag, and Christmas holiday flag. Even though similar results were found using the past
+24 hours values, values for the past 7 days were used to account for any potential hangover effects
+from holidays, hot or cold weather spells, or weekends.</p>
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure >
+
+
+  <a data-fancybox="" href="/post/energy-consumption-pandemic-part-d/VIC_MLP_30min_feat_hub9b9859a7c21e147fe7cd1718dc27bfb_434414_2000x2000_fit_lanczos_2.png" >
+
+
+  <img data-src="/post/energy-consumption-pandemic-part-d/VIC_MLP_30min_feat_hub9b9859a7c21e147fe7cd1718dc27bfb_434414_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="1905" height="1496">
+</a>
+
+
+
+</figure>
+
+<p>Key takeaway messages from the 30-minute causal model for Victoria include:</p>
+<ol>
+<li>Errors appear to be increasing in the test period.</li>
+<li>High and low electricity consumption forecasts tend to respectively be smaller and larger than observations.</li>
+<li>General consumption trend and seasonality are modelled quite well.</li>
+</ol>
+<h2 id="accounting-for-covid-19-restrictions-in-electricity-consumption-forecasts"><strong>Accounting for COVID-19 restrictions in electricity consumption forecasts</strong></h2>
+<p>intro</p>
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure >
+
+
+  <a data-fancybox="" href="/post/energy-consumption-pandemic-part-d/VIC_MLP_30min_feat_cov_hu624345ec1cd64e0968d34160ba4fd8be_429591_2000x2000_fit_lanczos_2.png" >
+
+
+  <img data-src="/post/energy-consumption-pandemic-part-d/VIC_MLP_30min_feat_cov_hu624345ec1cd64e0968d34160ba4fd8be_429591_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="1905" height="1496">
+</a>
+
+
+
+</figure>
+
+<p>Key takeaway messages from including a flag to represent COVID-19 restrictions include:</p>
+<ol>
+<li>Errors no longer increase as much in the test period.</li>
+<li>There does not appear to be a significant difference between the two models forecast capability.</li>
+<li>Further analysis is required to detect a change in forecast capability.</li>
+</ol>
+<h2 id="comparing-model-forecast-densities"><strong>Comparing model forecast densities</strong></h2>
+<p>Visualising the time series forecasts and resulting residuals is one way to detect 
+a change in forecast behavior. The absence of an obvious distinction between the two
+models does not indicate that there is no change. An alternative method to compare
+the model results is to analyse the density plots for the observed and modelled electricity
+consumption for the training and test period.</p>
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure >
+
+
+  <a data-fancybox="" href="/post/energy-consumption-pandemic-part-d/flag_density_hu007e19d9d43c08b22b5174ec72cadf27_194437_2000x2000_fit_lanczos_2.png" >
+
+
+  <img data-src="/post/energy-consumption-pandemic-part-d/flag_density_hu007e19d9d43c08b22b5174ec72cadf27_194437_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="1916" height="1279">
+</a>
+
+
+
+</figure>
+
+<p>Key takeaway messages from analysing density plots include:</p>
+<ol>
+<li>Both models are able represent the observed density in training relatively well.</li>
+<li>There is a greater difference between the observed and modelled densities in the test period.</li>
+<li>Including a flag for COVID-19 restrictions produces a density which is slightly more
+representative of the observed density for the test period.</li>
+</ol>
+<h2 id="tracking-model-drift-to-detect-changes-in-electricity-consumption-resulting-from-covid-19-restrictions"><strong>Tracking model drift to detect changes in electricity consumption resulting from COVID-19 restrictions</strong></h2>
+<p>We have observed a small difference between the density plots in the test period and
+now go back to checking to see how/if the two models relative errors drift in the test period.</p>
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure >
+
+
+  <a data-fancybox="" href="/post/energy-consumption-pandemic-part-d/model_drift_cov_hu0f1b43890889dd111e642c4268dd2688_395474_2000x2000_fit_lanczos_2.png" >
+
+
+  <img data-src="/post/energy-consumption-pandemic-part-d/model_drift_cov_hu0f1b43890889dd111e642c4268dd2688_395474_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="2464" height="1283">
+</a>
+
+
+
+</figure>
+
+<p>Key takeaway messages from tracking model drift include:</p>
+<ol>
+<li>By including a flag which accounts for COVID-19 restrictions our causal model
+drifts significantly less.</li>
+<li>It is possible that the base model even starts to drift in the training period.</li>
+<li>The base model performs slightly better in the training period.</li>
+</ol>
+<p>Throughout these blog posts I have used the neural network and random seed. It
+is possible that results would differ if an ensemble or different seed was used.
+I attempted to account for this by training for a large number of epochs and
+using model checkpoints and selecting the model which had the best validation period
+performance.</p>
+<h2 id="reductions-in-forecast-errors-by-accounting-for-covid-19-restrictions"><strong>Reductions in forecast errors by accounting for COVID-19 restrictions</strong></h2>
+<p>A noticeable drift in relative errors that can be attributed to COVID-19 restrictions 
+in Victoria was observed. We can now quantify these results.</p>
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure >
+
+
+  <a data-fancybox="" href="/post/energy-consumption-pandemic-part-d/restrict_bar_hue9652d07a36247fbc0e683fe13d47112_101229_2000x2000_fit_lanczos_2.png" >
+
+
+  <img data-src="/post/energy-consumption-pandemic-part-d/restrict_bar_hue9652d07a36247fbc0e683fe13d47112_101229_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="2424" height="1266">
+</a>
+
+
+
+</figure>
+
+<p>Key takeaway messages using a binary flag to represent COVID-19 restrictions include:</p>
+<ol>
+<li>There is a reduction in errors of <strong>5.08%</strong></li>
+<li>While both models have similar performance it is likely that including the binary flag
+for COVID-19 restrictions will make the model more robust for future predictions.</li>
+<li>There is less difference between test and training MAPE for the model which includes
+a binary flag for COVID-19. This suggests the model was not over-fit.</li>
+</ol>
+<h2 id="summary">Summary</h2>
+<p>This blog post has demonstrated that model forecast errors can be attributed
+to the change in behaviour that has resulted from COVID-19 restrictions. Furthermore,
+by including a binary flag which accounts for COVID-19 restrictions our model
+is more robust and less prone to drift.</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://AshjWright88.github.io/post/energy-consumption-pandemic-part-d/&amp;text=Attributing%20Forecast%20Errors%20to%20COVID-19%20Restrictions" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://AshjWright88.github.io/post/energy-consumption-pandemic-part-d/&amp;t=Attributing%20Forecast%20Errors%20to%20COVID-19%20Restrictions" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Attributing%20Forecast%20Errors%20to%20COVID-19%20Restrictions&amp;body=https://AshjWright88.github.io/post/energy-consumption-pandemic-part-d/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://AshjWright88.github.io/post/energy-consumption-pandemic-part-d/&amp;title=Attributing%20Forecast%20Errors%20to%20COVID-19%20Restrictions" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Attributing%20Forecast%20Errors%20to%20COVID-19%20Restrictions%20https://AshjWright88.github.io/post/energy-consumption-pandemic-part-d/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://AshjWright88.github.io/post/energy-consumption-pandemic-part-d/&amp;title=Attributing%20Forecast%20Errors%20to%20COVID-19%20Restrictions" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+    
+    <div class="media author-card content-widget-hr">
+      
+        
+        <img class="avatar mr-3 avatar-circle" src="/author/ashley-wright/avatar_huc57e6868dd3aefb7067b9f6cae035b1e_742964_270x270_fill_q90_lanczos_center.jpg" alt="Ashley Wright">
+      
+
+      <div class="media-body">
+        <h5 class="card-title"><a href="https://AshjWright88.github.io/">Ashley Wright</a></h5>
+        <h6 class="card-subtitle">Research Fellow</h6>
+        <p class="card-text">These blog posts are exploratory only and should not be considered as advice.</p>
+        <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:ashjwright88@gmail.com" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=PVwGuGsAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/AshjWright88" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/ashjwright/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+</ul>
+
+      </div>
+    </div>
+  
+
+
+
+
+
+
+
+<section id="comments">
+  
+    <div id="commento"></div>
+
+<script src="https://cdn.commento.io/js/commento.js" defer></script>
+
+  
+</section>
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.8/mermaid.min.js" integrity="sha256-lyWCDMnMeZiXRi7Zl54sZGKYmgQs4izcT7+tKc+KUBk=" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js" integrity="sha512-7t8APmYpzEsZP7CYoA7RfMPV9Bb+PJHa9x2WiUnDXZx3XHveuyWUtvNOexhkierl5flZ3tr92dP1mMS+SGlD+A==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.3b2b658c61ebd725bd5fc606c89fe44c.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+  
+  
+  
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+  <p class="powered-by copyright-license-text">
+    This work is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="noopener noreferrer" target="_blank">CC BY SA 4.0</a>
+  </p>
+  
+
+  <p class="powered-by footer-license-icons">
+    <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="noopener noreferrer" target="_blank">
+      <img src="https://search.creativecommons.org/static/img/cc_icon.svg" alt="CC icon">
+      <img src="https://search.creativecommons.org/static/img/cc-by_icon.svg" alt="CC by icon">
+      
+      
+        <img src="https://search.creativecommons.org/static/img/cc-sa_icon.svg" alt="CC SA icon">
+      
+    </a>
+  </p>
+
+
+
+
+  <p class="powered-by">
+    
+    Published with
+    <a href="https://wowchemy.com" target="_blank" rel="noopener">Wowchemy Website Builder</a>
+    
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

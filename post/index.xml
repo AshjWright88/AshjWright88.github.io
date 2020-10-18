@@ -5,7 +5,7 @@
     <link>https://AshjWright88.github.io/post/</link>
       <atom:link href="https://AshjWright88.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 12 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 18 Oct 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://AshjWright88.github.io/media/AWlogo.png</url>
       <title>Posts</title>
@@ -13,15 +13,532 @@
     </image>
     
     <item>
-      <title>Learning from Electricity Demand Data During A Pandemic - Part C</title>
+      <title>Neural Network Driven Insights into Electricity Consumption Data During COVID-19</title>
+      <link>https://AshjWright88.github.io/post/energy-consumption-pandemic-insights/</link>
+      <pubDate>Sun, 18 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://AshjWright88.github.io/post/energy-consumption-pandemic-insights/</guid>
+      <description>&lt;p&gt;The ongoing COVID-19 pandemic has caused widespread disruptions to everyday life
+and the global economy. Many existing forecast models no longer provide the same
+accuracy they once did. Consequently, being able to account for the change in
+conditions would prove quite valuable.&lt;/p&gt;
+&lt;p&gt;High resolution electricity consumption data is a potential proxy for economic activity.
+The nexus between electricity consumption and GDP is a widely debated topic. A 
+McKinsey quarterly 
+&lt;a href=&#34;https://www.mckinsey.com/industries/electric-power-and-natural-gas/our-insights/the-decoupling-of-gdp-and-energy-growth-a-ceo-guide#&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;article&lt;/a&gt;
+suggests that decoupling of GDP and energy growth occurs as economies advance.&lt;/p&gt;
+&lt;p&gt;Journal 
+&lt;a href=&#34;https://link.springer.com/article/10.1007/s10640-020-00467-4#article-info&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;articles&lt;/a&gt;
+which demonstrate a link between reduced electricity consumption as a result of 
+COVID-19 restrictions are starting to appear.&lt;/p&gt;
+&lt;p&gt;In my blog posts; 
+&lt;a href=&#34;https://www.ashleyjwright.com/energy-consumption-pandemic-part-a/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;A&lt;/a&gt;,
+
+&lt;a href=&#34;https://www.ashleyjwright.com/energy-consumption-pandemic-part-b/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;B&lt;/a&gt;, 
+&lt;a href=&#34;https://www.ashleyjwright.com/energy-consumption-pandemic-part-c/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;C&lt;/a&gt;,
+and 
+&lt;a href=&#34;https://www.ashleyjwright.com/energy-consumption-pandemic-part-d/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;D&lt;/a&gt; I explore
+Australian electricity consumption data for observable patterns that can be attributed to restrictions
+brought on by COVID-19. This blog post will demonstrate how I detected a change in
+Victorian electricity consumption which can be attributed to COVID-19 restrictions.&lt;/p&gt;
+&lt;p&gt;The rest of this post outlines the:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;methodology used,&lt;/li&gt;
+&lt;li&gt;key results &amp;amp; discussion, and&lt;/li&gt;
+&lt;li&gt;conclusions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;methodology&#34;&gt;&lt;strong&gt;Methodology&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;To deliver meaningful results in a short time I committed to posting weekly blog posts
+LinkedIn. These blog posts enabled me to produce results straight away, scale my
+project accordingly, and gain valuable feedback from interested data scientists. 
+The blog posts covered:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Exploratory Data Analysis,&lt;/li&gt;
+&lt;li&gt;Tracking model development,&lt;/li&gt;
+&lt;li&gt;Model drift, and&lt;/li&gt;
+&lt;li&gt;a way to attribute forecast errors to COVID-19 restrictions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I will now provide an overview of key results and discussions to be found in my
+blog posts.&lt;/p&gt;
+&lt;h2 id=&#34;results--discussion&#34;&gt;&lt;strong&gt;Results &amp;amp; Discussion&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Victoria has had the most severe restrictions in Australia. Consequently, Victorian
+electricity consumption is most likely to be impacted by COVID-19 restrictions.
+Before developing a model, it essential the data and its potential errors are understood.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-insights/VIC_decomp_hu8e5cb4b11fb0a775d733efa49f367458_418304_2000x2000_fit_lanczos_2.png&#34; &gt;
+
+
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-insights/VIC_decomp_hu8e5cb4b11fb0a775d733efa49f367458_418304_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1931&#34; height=&#34;1460&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Key takeaways from decomposing the Victorian electricity consumption data are:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;There is a slight downward trend which may be attributable to the adoption of renewable energy and efficiency measures.&lt;/li&gt;
+&lt;li&gt;There is a clear seasonality with peak consumption occurring throughout winter.&lt;/li&gt;
+&lt;li&gt;Errors are most obvious near the start of the year.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Using one step ahead forecasts, the Holt-Winters triple exponential smoother is used
+as a benchmark to track value gained from adding causal variables as inputs to 
+MLP and LSTM neural networks are explored.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-insights/model_track_hua072f9d3378d28c709d9890b7e897d45_189935_2000x2000_fit_lanczos_2.png&#34; &gt;
+
+
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-insights/model_track_hua072f9d3378d28c709d9890b7e897d45_189935_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1890&#34; height=&#34;1460&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Key takeaways from tracking model development are:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Both LSTM and MLP neural networks outperform the benchmark.&lt;/li&gt;
+&lt;li&gt;The MLP significantly improves when the day of the week is included.&lt;/li&gt;
+&lt;li&gt;The LSTM significantly improves when maximum and minimum temperatures are included.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I now explore how errors can be reduced by retraining the MLP neural network
+to prevent model drift.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-insights/mape_forecast_huf270c373a3b777c38104d6403ace2561_119307_2000x2000_fit_lanczos_2.png&#34; &gt;
+
+
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-insights/mape_forecast_huf270c373a3b777c38104d6403ace2561_119307_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2424&#34; height=&#34;1250&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Key takeaways from tracking model development are:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;By tracking model drift average reductions in forecast errors &lt;strong&gt;8.15%&lt;/strong&gt; can be observed.&lt;/li&gt;
+&lt;li&gt;A reduction of errors is not guaranteed.&lt;/li&gt;
+&lt;li&gt;As seen in blog 
+&lt;a href=&#34;https://www.ashleyjwright.com/energy-consumption-pandemic-part-c/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;C&lt;/a&gt; 
+forecast errors do not drift significantly from the test data set.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;After developing a robust model that performs well in a number of states it is
+not difficult to scale the solution to a 30-minute one step ahead forecast model.&lt;/p&gt;
+&lt;p&gt;To avoid electricity consumption data during COVID-19 restrictions leaking into our
+model and preventing us from detecting a change attributable to COVID-19 restrictions,
+the following model does not use past electricity consumption data as an input variable.&lt;/p&gt;
+&lt;p&gt;By setting a binary vector to 1 from the start of COVID-19 restrictions in Australia
+we can determine if our MLP neural network can learn a different pattern for electricity
+consumption throughout COVID-19 restrictions and provide improved forecasts.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-insights/model_drift_cov_hu0f1b43890889dd111e642c4268dd2688_395474_2000x2000_fit_lanczos_2.png&#34; &gt;
+
+
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-insights/model_drift_cov_hu0f1b43890889dd111e642c4268dd2688_395474_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2464&#34; height=&#34;1283&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Key takeaways from tracking model drift before and after COVID-19 restrictions:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The MLP NN which accounts for COVID-19 restrictions drifts significantly less than its counterpart.&lt;/li&gt;
+&lt;li&gt;Errors for both models are comparable before COVID-19 restrictions were put in places.&lt;/li&gt;
+&lt;li&gt;We can confidently say that a change in electricity consumption data has been detected for Victoria.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;conclusions&#34;&gt;&lt;strong&gt;Conclusions&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;By developing a MLP ANN that uses causal variables to predict step ahead electricity
+consumption in Victoria I was able to detect a change in Victorian electricity 
+consumption data which is attributable to COVID-19 restrictions.&lt;/p&gt;
+&lt;p&gt;Throughout this blog post I have demonstrated the value of tracking model performance,
+developing scalable experiments, and obtaining consistent feedback.&lt;/p&gt;
+&lt;p&gt;Please find my GitHub repository 
+&lt;a href=&#34;https://github.com/AshjWright88&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt; and current resume
+&lt;a href=&#34;https://www.ashleyjwright.com/files/ashleyjwrightcv.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Attributing Forecast Errors to COVID-19 Restrictions</title>
+      <link>https://AshjWright88.github.io/post/energy-consumption-pandemic-part-d/</link>
+      <pubDate>Sat, 17 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://AshjWright88.github.io/post/energy-consumption-pandemic-part-d/</guid>
+      <description>&lt;p&gt;There are a number of situations in which past data of the observation we are making
+forecasts for is not available. Possible reasons include time lags between data
+collection and data availability, and the time taken to quality control data.&lt;/p&gt;
+&lt;p&gt;Consequently, there is value to be gained by developing predictive models which
+do not rely on the availability of recent observations of the variable that we 
+are trying to forecast. Further, by developing a causal MLP neural network
+we are able to attribute changes in electricity consumption to COVID-19 restrictions.&lt;/p&gt;
+&lt;p&gt;Using 30 min electricity consumption for Victoria this blog will:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Develop a feature based causal model used to predict 1 step ahead electricity consumption.&lt;/li&gt;
+&lt;li&gt;Add a binary flag which indicates the start of COVID-19 restrictions in Victoria.&lt;/li&gt;
+&lt;li&gt;Compare model forecast densities with the observed electricity consumption.&lt;/li&gt;
+&lt;li&gt;Use model drift to demonstrate when performance improvements occur.&lt;/li&gt;
+&lt;li&gt;Show that by including a binary flag which indicates the start of COVID-19 restrictions
+test errors can be reduced by &lt;strong&gt;5.08%&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;using-a-feature-based-causal-mlp-ann-to-forecast-electricity-consumption&#34;&gt;&lt;strong&gt;Using a feature based causal MLP ANN to forecast electricity consumption&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;If we are able to account for all the key variables which drive electricity consumption
+then we would not need to incorporate past electricity consumption into our causal model.
+The MLP used to make day one step ahead electricity consumption forecasts uses 6 neurons
+and is trained with dropout of 6%. The variables included are the past 7 days values for 
+average, minimum and maximum temperature, solar radiation, time of the day, day of the week,
+public holiday flag, and Christmas holiday flag. Even though similar results were found using the past
+24 hours values, values for the past 7 days were used to account for any potential hangover effects
+from holidays, hot or cold weather spells, or weekends.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-d/VIC_MLP_30min_feat_hub9b9859a7c21e147fe7cd1718dc27bfb_434414_2000x2000_fit_lanczos_2.png&#34; &gt;
+
+
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-d/VIC_MLP_30min_feat_hub9b9859a7c21e147fe7cd1718dc27bfb_434414_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1905&#34; height=&#34;1496&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Key takeaway messages from the 30-minute causal model for Victoria include:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Errors appear to be increasing in the test period.&lt;/li&gt;
+&lt;li&gt;High and low electricity consumption forecasts tend to respectively be smaller and larger than observations.&lt;/li&gt;
+&lt;li&gt;General consumption trend and seasonality are modelled quite well.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;accounting-for-covid-19-restrictions-in-electricity-consumption-forecasts&#34;&gt;&lt;strong&gt;Accounting for COVID-19 restrictions in electricity consumption forecasts&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;intro&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-d/VIC_MLP_30min_feat_cov_hu624345ec1cd64e0968d34160ba4fd8be_429591_2000x2000_fit_lanczos_2.png&#34; &gt;
+
+
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-d/VIC_MLP_30min_feat_cov_hu624345ec1cd64e0968d34160ba4fd8be_429591_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1905&#34; height=&#34;1496&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Key takeaway messages from including a flag to represent COVID-19 restrictions include:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Errors no longer increase as much in the test period.&lt;/li&gt;
+&lt;li&gt;There does not appear to be a significant difference between the two models forecast capability.&lt;/li&gt;
+&lt;li&gt;Further analysis is required to detect a change in forecast capability.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;comparing-model-forecast-densities&#34;&gt;&lt;strong&gt;Comparing model forecast densities&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Visualising the time series forecasts and resulting residuals is one way to detect 
+a change in forecast behavior. The absence of an obvious distinction between the two
+models does not indicate that there is no change. An alternative method to compare
+the model results is to analyse the density plots for the observed and modelled electricity
+consumption for the training and test period.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-d/flag_density_hu007e19d9d43c08b22b5174ec72cadf27_194437_2000x2000_fit_lanczos_2.png&#34; &gt;
+
+
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-d/flag_density_hu007e19d9d43c08b22b5174ec72cadf27_194437_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1916&#34; height=&#34;1279&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Key takeaway messages from analysing density plots include:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Both models are able represent the observed density in training relatively well.&lt;/li&gt;
+&lt;li&gt;There is a greater difference between the observed and modelled densities in the test period.&lt;/li&gt;
+&lt;li&gt;Including a flag for COVID-19 restrictions produces a density which is slightly more
+representative of the observed density for the test period.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;tracking-model-drift-to-detect-changes-in-electricity-consumption-resulting-from-covid-19-restrictions&#34;&gt;&lt;strong&gt;Tracking model drift to detect changes in electricity consumption resulting from COVID-19 restrictions&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;We have observed a small difference between the density plots in the test period and
+now go back to checking to see how/if the two models relative errors drift in the test period.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-d/model_drift_cov_hu0f1b43890889dd111e642c4268dd2688_395474_2000x2000_fit_lanczos_2.png&#34; &gt;
+
+
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-d/model_drift_cov_hu0f1b43890889dd111e642c4268dd2688_395474_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2464&#34; height=&#34;1283&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Key takeaway messages from tracking model drift include:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;By including a flag which accounts for COVID-19 restrictions our causal model
+drifts significantly less.&lt;/li&gt;
+&lt;li&gt;It is possible that the base model even starts to drift in the training period.&lt;/li&gt;
+&lt;li&gt;The base model performs slightly better in the training period.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Throughout these blog posts I have used the neural network and random seed. It
+is possible that results would differ if an ensemble or different seed was used.
+I attempted to account for this by training for a large number of epochs and
+using model checkpoints and selecting the model which had the best validation period
+performance.&lt;/p&gt;
+&lt;h2 id=&#34;reductions-in-forecast-errors-by-accounting-for-covid-19-restrictions&#34;&gt;&lt;strong&gt;Reductions in forecast errors by accounting for COVID-19 restrictions&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;A noticeable drift in relative errors that can be attributed to COVID-19 restrictions 
+in Victoria was observed. We can now quantify these results.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-d/restrict_bar_hue9652d07a36247fbc0e683fe13d47112_101229_2000x2000_fit_lanczos_2.png&#34; &gt;
+
+
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-d/restrict_bar_hue9652d07a36247fbc0e683fe13d47112_101229_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2424&#34; height=&#34;1266&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Key takeaway messages using a binary flag to represent COVID-19 restrictions include:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;There is a reduction in errors of &lt;strong&gt;5.08%&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;While both models have similar performance it is likely that including the binary flag
+for COVID-19 restrictions will make the model more robust for future predictions.&lt;/li&gt;
+&lt;li&gt;There is less difference between test and training MAPE for the model which includes
+a binary flag for COVID-19. This suggests the model was not over-fit.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;This blog post has demonstrated that model forecast errors can be attributed
+to the change in behaviour that has resulted from COVID-19 restrictions. Furthermore,
+by including a binary flag which accounts for COVID-19 restrictions our model
+is more robust and less prone to drift.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Accounting for Model Drift</title>
       <link>https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/</link>
       <pubDate>Mon, 12 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/</guid>
       <description>&lt;p&gt;To &lt;strong&gt;improve forecasting capability&lt;/strong&gt; during uncertain times it is necessary to
 both understand and address &lt;strong&gt;model drift&lt;/strong&gt;. The hypothesis I aim to test is that
-electricity demand forecasts will be more prone to errors in states that have
+electricity consumption forecasts will be more prone to errors in states that have
 seen more severe and prolonged restrictions as a result of COVID-19.&lt;/p&gt;
-&lt;p&gt;Using daily electricity demand for Vic, NSW, Tas, SA, and QLD this
+&lt;p&gt;Using daily electricity consumption for Vic, NSW, Tas, SA, and QLD this
 blog will demonstrate:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;What model drift is.&lt;/li&gt;
@@ -29,7 +546,7 @@ blog will demonstrate:&lt;/p&gt;
 &lt;li&gt;The estimated operational performance of day ahead forecasts using MLP ANN&amp;rsquo;s.&lt;/li&gt;
 &lt;li&gt;Model drift in an operational setting.&lt;/li&gt;
 &lt;li&gt;That tracking model performance and regularly re-training models,
-errors can be reduced by an average of &lt;strong&gt;7.36%&lt;/strong&gt;.&lt;/li&gt;
+errors can be reduced by an average of &lt;strong&gt;8.15%&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;what-is-model-drift&#34;&gt;&lt;strong&gt;What is model drift?&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;Model drift is the degradation of forecasting capability over time. One method to tackle this problem
@@ -61,10 +578,10 @@ model to 100 we can track how each model drifts.&lt;/p&gt;
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/model_drift_traindevtest_hud310aecc835ce9f9c7758ecea5f02ed4_827001_2000x2000_fit_lanczos_2.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/model_drift_traindevtest_hu2defd6429f417477c6bde62009752ca1_932865_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/model_drift_traindevtest_hud310aecc835ce9f9c7758ecea5f02ed4_827001_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2769&#34; height=&#34;1250&#34;&gt;
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/model_drift_traindevtest_hu2defd6429f417477c6bde62009752ca1_932865_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2769&#34; height=&#34;1250&#34;&gt;
 &lt;/a&gt;
 
 
@@ -121,10 +638,10 @@ importance of train, dev, test splits.&lt;/p&gt;
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/density_hu2cc116be57d158e16610d0f5cdea4993_209589_2000x2000_fit_lanczos_2.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/density_hu533889311c0b62463552259b75175b61_212381_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/density_hu2cc116be57d158e16610d0f5cdea4993_209589_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2465&#34; height=&#34;1287&#34;&gt;
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/density_hu533889311c0b62463552259b75175b61_212381_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2465&#34; height=&#34;1287&#34;&gt;
 &lt;/a&gt;
 
 
@@ -139,7 +656,7 @@ include:&lt;/p&gt;
 performance on an &lt;strong&gt;unknown&lt;/strong&gt; data set.&lt;/li&gt;
 &lt;li&gt;We are likely to see model drift in the Dev and Test sets.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;estimating-operational-performance-of-mlp-anns-to-predict-electricity-demand&#34;&gt;&lt;strong&gt;Estimating operational performance of MLP ANN&amp;rsquo;s to predict electricity demand.&lt;/strong&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;estimating-operational-performance-of-mlp-anns-to-predict-electricity-consumption&#34;&gt;&lt;strong&gt;Estimating operational performance of MLP ANN&amp;rsquo;s to predict electricity consumption.&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;The train and development sets were used tune hyper-parameters. A 6-neuron layer
 and Dropout of 8% were used to avoid over-fitting. Using the test 
 set we can now estimate model performance in an operational setting.&lt;/p&gt;
@@ -169,10 +686,10 @@ set we can now estimate model performance in an operational setting.&lt;/p&gt;
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/mape_dev_hu38743e526657035213a1cfc331cff797_97314_2000x2000_fit_lanczos_2.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/mape_dev_hu113c310c73bfbe66c76ef6df6dae10b1_97889_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/mape_dev_hu38743e526657035213a1cfc331cff797_97314_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2424&#34; height=&#34;1250&#34;&gt;
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/mape_dev_hu113c310c73bfbe66c76ef6df6dae10b1_97889_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2424&#34; height=&#34;1250&#34;&gt;
 &lt;/a&gt;
 
 
@@ -219,10 +736,10 @@ will be more prone to errors.&lt;/p&gt;
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/model_drift_forecast_hu243a672745015b6d1f88b2442d26b6ea_1012115_2000x2000_fit_lanczos_2.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/model_drift_forecast_hu6671daf630100fe8d2e6cefa720b5c2f_892864_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/model_drift_forecast_hu243a672745015b6d1f88b2442d26b6ea_1012115_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2820&#34; height=&#34;1243&#34;&gt;
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/model_drift_forecast_hu6671daf630100fe8d2e6cefa720b5c2f_892864_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2820&#34; height=&#34;1243&#34;&gt;
 &lt;/a&gt;
 
 
@@ -231,7 +748,7 @@ will be more prone to errors.&lt;/p&gt;
 
 &lt;p&gt;The key takeaway messages from reviewing model performance are:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Victorian electricity demand forecasts tend to drift more than others. Is this a result
+&lt;li&gt;Victorian electricity consumption forecasts tend to drift more than others. Is this a result
 of tighter restrictions?&lt;/li&gt;
 &lt;li&gt;Errors tend to have a seasonal component; this indicates further improvements can be made to
 the model and that we cannot assume a jump in errors is caused by tighter restrictions.&lt;/li&gt;
@@ -269,10 +786,10 @@ of leaving them to drift.&lt;/p&gt;
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/mape_forecast_hu128da97d4a693d6cfcc9aa6861169c15_120416_2000x2000_fit_lanczos_2.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/mape_forecast_huf270c373a3b777c38104d6403ace2561_119307_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/mape_forecast_hu128da97d4a693d6cfcc9aa6861169c15_120416_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2424&#34; height=&#34;1250&#34;&gt;
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-c/mape_forecast_huf270c373a3b777c38104d6403ace2561_119307_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2424&#34; height=&#34;1250&#34;&gt;
 &lt;/a&gt;
 
 
@@ -281,35 +798,34 @@ of leaving them to drift.&lt;/p&gt;
 
 &lt;p&gt;The key takeaway messages from reviewing model performance for each state in September 2020 include:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;There is no crystal ball that allows us to predict the future.&lt;/li&gt;
 &lt;li&gt;By tracking model drift and re-training our models, reductions in operational forecast errors of
-&lt;strong&gt;7.36%&lt;/strong&gt; can be realised.&lt;/li&gt;
+&lt;strong&gt;8.15%&lt;/strong&gt; can be realised.&lt;/li&gt;
+&lt;li&gt;A reduction of errors is not guaranteed.&lt;/li&gt;
 &lt;li&gt;Operational performance is similar to that estimated earlier.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;p&gt;I have provided an overview of one way to track and account for model
 drift. Following this procedure allows &lt;strong&gt;end-users&lt;/strong&gt; to track operational model
 performance and schedule re-training when a desired threshold is met.&lt;/p&gt;
-&lt;p&gt;We tracked model drift using 2020 electricity demand data. It is not entirely clear
+&lt;p&gt;We tracked model drift using 2020 electricity consumption data. It is not entirely clear
 if the increase in model errors can be attributed to restrictions put in place to
 combat COVID-19. Developing forecast models at greater resolution may provide
 more insights.&lt;/p&gt;
-&lt;p&gt;If you would like to access my GitHub repository which I used to develop these blogs, please contact me.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Learning from Electricity Demand Data During A Pandemic - Part B</title>
+      <title>Developing Neural Networks to Forecast Electricity Consumption</title>
       <link>https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/</link>
       <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/</guid>
-      <description>&lt;p&gt;Using the daily Victorian electricity demand as an example, this blog will
+      <description>&lt;p&gt;Using the daily Victorian electricity consumption as an example, this blog will
 outline procedures to &lt;strong&gt;develop a forecasting model&lt;/strong&gt;. To enable scheduling of
 energy supply for the next day I develop one day ahead forecasts.
 In my next post I will use this model to outline procedures 
 to &lt;strong&gt;improve forecasting capability&lt;/strong&gt; during uncertain times.&lt;/p&gt;
 &lt;p&gt;When developing a model, it is easy to get carried away and build a fancy, shiny
-model which resembles a &lt;strong&gt;Formula One car&lt;/strong&gt;. If we are wanting to go off road,
+model which resembles a &lt;strong&gt;formula One car&lt;/strong&gt;. If we are wanting to go off road,
 then this model/car is next to useless. It is imperative to develop a fit for
 purpose model and track modeling improvements.&lt;/p&gt;
 &lt;p&gt;This blog will outline how I have:&lt;/p&gt;
@@ -318,8 +834,8 @@ purpose model and track modeling improvements.&lt;/p&gt;
 model improvements.&lt;/li&gt;
 &lt;li&gt;Cleaned and explored the data.&lt;/li&gt;
 &lt;li&gt;Developed a benchmark forecasting model.&lt;/li&gt;
-&lt;li&gt;Developed a LSTM recurrent neural network to forecast electricity demand.&lt;/li&gt;
-&lt;li&gt;Developed a MLP artificial neural network to forecast electricity demand.&lt;/li&gt;
+&lt;li&gt;Developed a LSTM recurrent neural network to forecast electricity consumption.&lt;/li&gt;
+&lt;li&gt;Developed a MLP artificial neural network to forecast electricity consumption.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;tracking-model-development&#34;&gt;&lt;strong&gt;Tracking Model Development&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;Using the mean absolute percentage error, I demonstrate below
@@ -351,10 +867,10 @@ complexity grows.&lt;/p&gt;
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/model_track_hud89c1cd304a4592aaacaffd37dba6de6_122726_2000x2000_fit_lanczos_2.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/model_track_hua072f9d3378d28c709d9890b7e897d45_189935_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/model_track_hud89c1cd304a4592aaacaffd37dba6de6_122726_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1833&#34; height=&#34;742&#34;&gt;
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/model_track_hua072f9d3378d28c709d9890b7e897d45_189935_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1890&#34; height=&#34;1460&#34;&gt;
 &lt;/a&gt;
 
 
@@ -365,9 +881,8 @@ complexity grows.&lt;/p&gt;
 &lt;p&gt;Key takeaway messages from tracking model development include:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Both the MLP and LSTM &lt;strong&gt;outperform&lt;/strong&gt; the benchmark model.&lt;/li&gt;
-&lt;li&gt;Significant improvements are noticed when &lt;strong&gt;temperature&lt;/strong&gt; data is included.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Further improvements&lt;/strong&gt; are realised when we account for the day of the week
-and holidays.&lt;/li&gt;
+&lt;li&gt;The MLP significantly improves when the day of the week is included.&lt;/li&gt;
+&lt;li&gt;The LSTM significantly improves when maximum and minimum temperatures are included.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;At this point it is essential to ask &lt;em&gt;&amp;ldquo;will the end user benefit from further model development&amp;rdquo;&lt;/em&gt;?&lt;/p&gt;
 &lt;h2 id=&#34;data-cleaning-and-exploratory-data-analysis&#34;&gt;&lt;strong&gt;Data Cleaning and Exploratory Data Analysis&lt;/strong&gt;&lt;/h2&gt;
@@ -408,23 +923,23 @@ an appropriate model.&lt;/p&gt;
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/VIC_decomp_hu2b8dc1ea9b117058e94fb45290872c27_416991_2000x2000_fit_lanczos_2.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/VIC_decomp_hu8e5cb4b11fb0a775d733efa49f367458_418304_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/VIC_decomp_hu2b8dc1ea9b117058e94fb45290872c27_416991_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1931&#34; height=&#34;1460&#34;&gt;
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/VIC_decomp_hu8e5cb4b11fb0a775d733efa49f367458_418304_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1931&#34; height=&#34;1460&#34;&gt;
 &lt;/a&gt;
 
 
 
 &lt;/figure&gt;
 
-&lt;p&gt;Key takeaway messages from reviewing the decomposed electricity demand for Victoria
+&lt;p&gt;Key takeaway messages from reviewing the decomposed electricity consumption for Victoria
 include:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;From 2014 to 2019 there is a slight &lt;strong&gt;downward trend&lt;/strong&gt; in electricity demand,
+&lt;li&gt;From 2014 to 2019 there is a slight &lt;strong&gt;downward trend&lt;/strong&gt; in electricity consumption,
 this may be a result of &lt;strong&gt;electricity efficiency&lt;/strong&gt; measures or an &lt;strong&gt;uptake in solar panels&lt;/strong&gt;.&lt;/li&gt;
 &lt;li&gt;There is a clear yearly seasonal component that is likely to be a result of
-seasonal fluctuations in &lt;strong&gt;temperature&lt;/strong&gt; and subsequent heating and cooling demand.&lt;/li&gt;
+seasonal fluctuations in &lt;strong&gt;temperature&lt;/strong&gt; and subsequent heating and cooling consumption.&lt;/li&gt;
 &lt;li&gt;The residuals show that errors tend to &lt;strong&gt;peak&lt;/strong&gt; at the beginning of the year.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;benchmark-model&#34;&gt;&lt;strong&gt;Benchmark Model&lt;/strong&gt;&lt;/h2&gt;
@@ -474,11 +989,11 @@ trend we use the Holt - Winters triple exponential smoother as our benchmark.&lt
 &lt;li&gt;The benchmark model captures the &lt;strong&gt;annual seasonality&lt;/strong&gt;.&lt;/li&gt;
 &lt;li&gt;Residuals in training still show errors &lt;strong&gt;peaking&lt;/strong&gt; at the start of the year.&lt;/li&gt;
 &lt;li&gt;The residuals in development show a &lt;strong&gt;weekly pattern&lt;/strong&gt; which is most due
-to lower electricity demand on weekends.&lt;/li&gt;
+to lower electricity consumption on weekends.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;long-short-term-memory-recurrent-neural-network&#34;&gt;&lt;strong&gt;Long Short-Term Memory Recurrent Neural Network&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;The LSTM RNN is a popular choice for time series forecasting.
-This model learns from the past 7 days of electricity demand, minimum, maximum,
+This model learns from the past 7 days of electricity consumption, minimum, maximum,
 and average temperature, and solar radiation.
 It is assumed that we will have a good estimate of the next day&amp;rsquo;s weather.&lt;/p&gt;
 
@@ -507,10 +1022,10 @@ It is assumed that we will have a good estimate of the next day&amp;rsquo;s weat
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/LSTM_weather_hufc0f4494b82df1cc5290833d297c20b9_495807_2000x2000_fit_lanczos_2.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/LSTM_weather_hu17c3603f7da98dc3750494969e34d3ee_500066_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/LSTM_weather_hufc0f4494b82df1cc5290833d297c20b9_495807_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1931&#34; height=&#34;1460&#34;&gt;
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/LSTM_weather_hu17c3603f7da98dc3750494969e34d3ee_500066_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1931&#34; height=&#34;1460&#34;&gt;
 &lt;/a&gt;
 
 
@@ -519,14 +1034,14 @@ It is assumed that we will have a good estimate of the next day&amp;rsquo;s weat
 
 &lt;p&gt;The key takeaway messages from reviewing LSTM model performance are:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;The &lt;strong&gt;LSTM&lt;/strong&gt; significantly out-performs the benchmark model capturing peak demand much better.&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;LSTM&lt;/strong&gt; significantly out-performs the benchmark model capturing peak consumption much better.&lt;/li&gt;
 &lt;li&gt;The residuals in training show that there is a &lt;strong&gt;pattern&lt;/strong&gt; to the errors. These
 peaks are likely to be around holiday periods.&lt;/li&gt;
 &lt;li&gt;The residuals in development still show a &lt;strong&gt;weekly pattern&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;multilayer-perceptron-artificial-neural-network&#34;&gt;&lt;strong&gt;Multilayer Perceptron Artificial Neural Network&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;Instead of perceiving electricity demand as a time series model we can develop a 
-causal model which forecasts electricity demand as a function of the past 7 days for 
+&lt;p&gt;Instead of perceiving electricity consumption as a time series model we can develop a 
+causal model which forecasts electricity consumption as a function of the past 7 days for 
 weather, day of the week and year, holiday period and trend. The MLP ANN is well
 suited to this task.&lt;/p&gt;
 
@@ -555,10 +1070,10 @@ suited to this task.&lt;/p&gt;
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/MLP_all_hu6a4733eca27246baf69e795ff3a7679b_475811_2000x2000_fit_lanczos_2.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/MLP_all_hu0d4b69319b0634a1229e3893f13a5a9a_491085_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/MLP_all_hu6a4733eca27246baf69e795ff3a7679b_475811_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1931&#34; height=&#34;1460&#34;&gt;
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-b/MLP_all_hu0d4b69319b0634a1229e3893f13a5a9a_491085_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1931&#34; height=&#34;1460&#34;&gt;
 &lt;/a&gt;
 
 
@@ -568,11 +1083,11 @@ suited to this task.&lt;/p&gt;
 &lt;p&gt;The key takeaway messages from reviewing MLP model performance are:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Including weekends and holidays which &lt;strong&gt;account for behavioural&lt;/strong&gt; changes commonly
-associated with changes to electricity demand significantly improves performance.&lt;/li&gt;
-&lt;li&gt;The model tends to both &lt;strong&gt;under and over-predict peaks and troughs&lt;/strong&gt;. An 
+associated with changes to electricity consumption significantly improves performance.&lt;/li&gt;
+&lt;li&gt;The model tends to &lt;strong&gt;under and over-predict peaks and troughs&lt;/strong&gt; respectively. An 
 alternate loss function may help this.&lt;/li&gt;
-&lt;li&gt;Since &lt;strong&gt;behaviour is a key element&lt;/strong&gt; to electricity demand forecasting, we can
-expect electricity demand during the &lt;strong&gt;pandemic&lt;/strong&gt; to be more difficult to forecast.&lt;/li&gt;
+&lt;li&gt;Since &lt;strong&gt;behaviour is a key element&lt;/strong&gt; to electricity consumption forecasting, we can
+expect electricity consumption during the &lt;strong&gt;pandemic&lt;/strong&gt; to be more difficult to forecast.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;p&gt;In this blog post I provided an overview of one way to develop a benchmark model
@@ -582,14 +1097,14 @@ shortcomings and priorities. It is shown that the MLP which accounts for the
 day of the week and holidays significantly outperforms the LSTM and benchmark 
 model.&lt;/p&gt;
 &lt;p&gt;You may have noticed that I did not test the model using Victorian electricity
-demand data for 2019 onward. Preventing test data from being used in model
+consumption data for 2019 onward. Preventing test data from being used in model
 development enables us to make more reliable forecasts. Next week I will outline
 procedures to &lt;strong&gt;improve forecasting capability&lt;/strong&gt; during uncertain times.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Learning from Electricity Demand Data During A Pandemic - Part A</title>
+      <title>Exploring Electricity Consumption Data</title>
       <link>https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/</link>
       <pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/</guid>
@@ -600,28 +1115,28 @@ and unprecedented amounts of data made publicly available. To say that
 decide which direction to pivot in? Let us see what we can learn from the data.&lt;/p&gt;
 &lt;p&gt;This weekly blog will deliver insights into:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;The observed changes in electricity demand during the pandemic.&lt;/li&gt;
+&lt;li&gt;The observed changes in electricity consumption during the pandemic.&lt;/li&gt;
 &lt;li&gt;What impact changed habits have on forecasting capability.&lt;/li&gt;
 &lt;li&gt;The value to be gained.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;As a starting point we will profile the typical weekday and weekend electricity
-demand and reference price for Victorian&amp;rsquo;s during the current stage 4
+consumption and reference price for Victorian&amp;rsquo;s during the current stage 4
 restrictions. To gain further insight into the potential impact stage 4
-restrictions have on electricity demand and price, we will make comparisons
+restrictions have on electricity consumption and price, we will make comparisons
 for the same time period last year in Victoria and similarly New South Wales, a state which is not
 currently under stage 4 restrictions.&lt;/p&gt;
-&lt;h2 id=&#34;victorian-electricity-demand-profiles-during-stage-4-restrictions&#34;&gt;&lt;strong&gt;Victorian Electricity demand profiles during stage 4 restrictions&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;Fluctuations in Electricity demand are predominantly influenced by
-human behaviour and the demand for heating and cooling. Typically, when
-comparing electricity demand across years and seasons, demand data is
+&lt;h2 id=&#34;victorian-electricity-consumption-profiles-during-stage-4-restrictions&#34;&gt;&lt;strong&gt;Victorian Electricity consumption profiles during stage 4 restrictions&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Fluctuations in Electricity consumption are predominantly influenced by
+human behaviour and the consumption for heating and cooling. Typically, when
+comparing electricity consumption across years and seasons, consumption data is
 normalized by the weather. It is not pragmatic to normalise the 30 min
-electricity demand data, made available through
+electricity consumption data, made available through
 
 &lt;a href=&#34;https://aemo.com.au/energy-systems/electricity/national-electricity-market-nem/data-nem/data-dashboard-nem&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AEMO&lt;/a&gt;,
 by the daily temperature observations made available through the 
 
 &lt;a href=&#34;http://www.bom.gov.au/climate/data/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;BoM&lt;/a&gt;. Consequently, we will compare
-electricity demand data without factoring in heating and cooling
+electricity consumption data without factoring in heating and cooling
 requirements.&lt;/p&gt;
 
 
@@ -649,24 +1164,24 @@ requirements.&lt;/p&gt;
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/VIC_profiles_hud8c4ed02445b99766836fe8dcc6fdd3a_196208_2000x2000_fit_lanczos_2.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/VIC_profiles_hu3d1275a214525f231b558273ec6a8738_198313_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/VIC_profiles_hud8c4ed02445b99766836fe8dcc6fdd3a_196208_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1542&#34; height=&#34;1283&#34;&gt;
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/VIC_profiles_hu3d1275a214525f231b558273ec6a8738_198313_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1542&#34; height=&#34;1283&#34;&gt;
 &lt;/a&gt;
 
 
 
 &lt;/figure&gt;
 
-&lt;p&gt;Key takeaway messages from reviewing Victorian electricity demand data include:&lt;/p&gt;
+&lt;p&gt;Key takeaway messages from reviewing Victorian electricity consumption data include:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Our weekends are looking less regular.&lt;/li&gt;
-&lt;li&gt;Midday demand is flatter on weekends.&lt;/li&gt;
-&lt;li&gt;Weekend electricity demand shows more variation, particularly during stage 4 restrictions between 7 AM and 3PM.&lt;/li&gt;
+&lt;li&gt;Midday consumption is flatter on weekends.&lt;/li&gt;
+&lt;li&gt;Weekend electricity consumption shows more variation, particularly during stage 4 restrictions between 7 AM and 3PM.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;new-south-wales-electricity-demand-profiles-during-victorias-stage-4-restrictions&#34;&gt;&lt;strong&gt;New South Wales electricity demand profiles during Victoria&amp;rsquo;s stage 4 restrictions&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;Naturally, I was then curious to compare the Victorian electricity demand profiles
+&lt;h2 id=&#34;new-south-wales-electricity-consumption-profiles-during-victorias-stage-4-restrictions&#34;&gt;&lt;strong&gt;New South Wales electricity consumption profiles during Victoria&amp;rsquo;s stage 4 restrictions&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Naturally, I was then curious to compare the Victorian electricity consumption profiles
 to those found in a state which does not currently have stage 4 restrictions in place.
 Let&amp;rsquo;s look at the neighbouring state of NSW.&lt;/p&gt;
 
@@ -695,28 +1210,28 @@ Let&amp;rsquo;s look at the neighbouring state of NSW.&lt;/p&gt;
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/NSW_profiles_huf558fdf2d92caad69a4b55d2bd962063_185734_2000x2000_fit_lanczos_2.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/NSW_profiles_hu85b0fd8ee35e28ef23c5ff4b56dc0769_188042_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/NSW_profiles_huf558fdf2d92caad69a4b55d2bd962063_185734_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1555&#34; height=&#34;1283&#34;&gt;
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/NSW_profiles_hu85b0fd8ee35e28ef23c5ff4b56dc0769_188042_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1555&#34; height=&#34;1283&#34;&gt;
 &lt;/a&gt;
 
 
 
 &lt;/figure&gt;
 
-&lt;p&gt;Key takeaway messages from reviewing NSW electricity demand data include:&lt;/p&gt;
+&lt;p&gt;Key takeaway messages from reviewing NSW electricity consumption data include:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;There are less changes changes in midday demand on the weekends.&lt;/li&gt;
-&lt;li&gt;Less restrictions in NSW may be associated with more consistency in electricity demand.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Aggregated electricity demand across NSW and Victoria has not significantly changed.&lt;/strong&gt;
+&lt;li&gt;There are less changes in midday consumption on the weekends.&lt;/li&gt;
+&lt;li&gt;Less restrictions in NSW may be associated with more consistency in electricity consumption.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Aggregated electricity consumption across NSW and Victoria has not significantly changed.&lt;/strong&gt;
 This was not expected. It is quite possible that increases in 
 
-&lt;a href=&#34;https://www.energynetworks.com.au/news/energy-insider/2020-energy-insider/commercial-down-v-residential-up-covid-19s-electricity-impact/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;residential demand are offsetting decreases in commercial demand&lt;/a&gt;. 
+&lt;a href=&#34;https://www.energynetworks.com.au/news/energy-insider/2020-energy-insider/commercial-down-v-residential-up-covid-19s-electricity-impact/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;residential consumption are offsetting decreases in commercial consumption&lt;/a&gt;. 
 It would be great to get access to this data!&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;victorian-electricity-price-profiles-during-victorias-stage-4-restrictions&#34;&gt;&lt;strong&gt;Victorian electricity price profiles during Victoria&amp;rsquo;s stage 4 restrictions&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;If you are like me and ask, &amp;ldquo;if residential electricity demand has increased then will
+&lt;p&gt;If you are like me and ask, &amp;ldquo;if residential electricity consumption has increased then will
 my electricity bill be through the roof?&amp;rdquo; The answer is it depends. The key
 variables are the electricity tariffs you pay (explore the Victorian energy
 compare 
@@ -749,10 +1264,10 @@ to a region.&lt;/p&gt;
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/VIC_RRP_huec09bd75497e4d9de63913c8d2529db8_171709_2000x2000_fit_lanczos_2.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/VIC_RRP_hu5c0389e575d9fdeb12cdb16f53288951_166048_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/VIC_RRP_huec09bd75497e4d9de63913c8d2529db8_171709_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1529&#34; height=&#34;1283&#34;&gt;
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/VIC_RRP_hu5c0389e575d9fdeb12cdb16f53288951_166048_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1529&#34; height=&#34;1283&#34;&gt;
 &lt;/a&gt;
 
 
@@ -765,7 +1280,7 @@ to a region.&lt;/p&gt;
 &lt;li&gt;There is no longer a morning peak in RRP.&lt;/li&gt;
 &lt;li&gt;There are currently less fluctuations in RRP throughout the day.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;new-south-wales-electricity-price-profiles-during-victorias-stage-4-restrictions&#34;&gt;New South Wales electricity price profiles during Victoria&amp;rsquo;s stage 4 restrictions&lt;/h2&gt;
+&lt;h2 id=&#34;new-south-wales-electricity-price-profiles-during-victorias-stage-4-restrictions&#34;&gt;&lt;strong&gt;New South Wales electricity price profiles during Victoria&amp;rsquo;s stage 4 restrictions&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;Again, we should compare this to New South Wales to see if the trend is specific
 to Victoria.&lt;/p&gt;
 
@@ -794,10 +1309,10 @@ to Victoria.&lt;/p&gt;
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/NSW_RRP_hudc11793e7fcb86b575cf34e90df49414_174426_2000x2000_fit_lanczos_2.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/NSW_RRP_hu1f6cae3bbf98e6b3df5f4d977f3fdaba_168747_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/NSW_RRP_hudc11793e7fcb86b575cf34e90df49414_174426_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1529&#34; height=&#34;1283&#34;&gt;
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/NSW_RRP_hu1f6cae3bbf98e6b3df5f4d977f3fdaba_168747_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1529&#34; height=&#34;1283&#34;&gt;
 &lt;/a&gt;
 
 
@@ -835,10 +1350,10 @@ each year to the current date of analysis.&lt;/p&gt;
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/Mean_price_hu9bc1f9dcf86ca787a867b9b756fa193e_102820_2000x2000_fit_lanczos_2.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/Mean_price_hucf0a83870d7f32b1f530a498e3e7e05a_102809_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/Mean_price_hu9bc1f9dcf86ca787a867b9b756fa193e_102820_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2322&#34; height=&#34;1268&#34;&gt;
+  &lt;img data-src=&#34;https://AshjWright88.github.io/post/energy-consumption-pandemic-part-a/Mean_price_hucf0a83870d7f32b1f530a498e3e7e05a_102809_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2322&#34; height=&#34;1268&#34;&gt;
 &lt;/a&gt;
 
 
@@ -855,16 +1370,15 @@ for more information.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;COVID-19 is not&lt;/strong&gt; the only reason electricity prices are at 5 year low, there
 are a number of other important factors to consider.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
-&lt;p&gt;When compared to this time last year, weekend electricity demand under the
+&lt;h2 id=&#34;summary&#34;&gt;&lt;strong&gt;Summary&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;When compared to this time last year, weekend electricity consumption under the
 current restrictions is less regular for Victoria.
 COVID-19, among other factors, has driven the regional reference price for
-electricity to a 5 year low.&lt;/p&gt;
+electricity to a 5-year low.&lt;/p&gt;
 &lt;p&gt;2020 has been a year of uncertainty and the need for good quality forecasts has
 increased. Prior to making any predictions about the future it is imperative
 that the data is explored and key drivers for change are understood. Even then,
-unprecedented changes make forecasting even more difficult. Future posts may 
-look into household demand and/or the influence oil price has on RRP.&lt;/p&gt;
+unprecedented changes make forecasting even more difficult.&lt;/p&gt;
 </description>
     </item>
     
