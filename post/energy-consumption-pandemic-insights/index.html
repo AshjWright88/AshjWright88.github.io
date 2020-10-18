@@ -844,12 +844,12 @@ suggests that decoupling of GDP and energy growth occurs as economies advance.</
 which demonstrate a link between reduced electricity consumption as a result of 
 COVID-19 restrictions are starting to appear.</p>
 <p>In my blog posts; 
-<a href="https://www.ashleyjwright.com/energy-consumption-pandemic-part-a/" target="_blank" rel="noopener">A</a>,
+<a href="https://www.ashleyjwright.com/post/energy-consumption-pandemic-part-a/" target="_blank" rel="noopener">A</a>,
 
-<a href="https://www.ashleyjwright.com/energy-consumption-pandemic-part-b/" target="_blank" rel="noopener">B</a>, 
-<a href="https://www.ashleyjwright.com/energy-consumption-pandemic-part-c/" target="_blank" rel="noopener">C</a>,
+<a href="https://www.ashleyjwright.com/post/energy-consumption-pandemic-part-b/" target="_blank" rel="noopener">B</a>, 
+<a href="https://www.ashleyjwright.com/post/energy-consumption-pandemic-part-c/" target="_blank" rel="noopener">C</a>,
 and 
-<a href="https://www.ashleyjwright.com/energy-consumption-pandemic-part-d/" target="_blank" rel="noopener">D</a> I explore
+<a href="https://www.ashleyjwright.com/post/energy-consumption-pandemic-part-d/" target="_blank" rel="noopener">D</a> I explore
 Australian electricity consumption data for observable patterns that can be attributed to restrictions
 brought on by COVID-19. This blog post will demonstrate how I detected a change in
 Victorian electricity consumption which can be attributed to COVID-19 restrictions.</p>
@@ -860,22 +860,22 @@ Victorian electricity consumption which can be attributed to COVID-19 restrictio
 <li>conclusions.</li>
 </ul>
 <h2 id="methodology"><strong>Methodology</strong></h2>
-<p>To deliver meaningful results in a short time I committed to posting weekly blog posts
+<p>To deliver meaningful results in a short time I committed to posting weekly blog posts on
 LinkedIn. These blog posts enabled me to produce results straight away, scale my
 project accordingly, and gain valuable feedback from interested data scientists. 
 The blog posts covered:</p>
-<ul>
+<ol>
 <li>Exploratory Data Analysis,</li>
-<li>Tracking model development,</li>
-<li>Model drift, and</li>
+<li>tracking model development,</li>
+<li>model drift, and</li>
 <li>a way to attribute forecast errors to COVID-19 restrictions.</li>
-</ul>
-<p>I will now provide an overview of key results and discussions to be found in my
+</ol>
+<p>I will now provide an overview of the key results and discussions to be found in my
 blog posts.</p>
 <h2 id="results--discussion"><strong>Results &amp; Discussion</strong></h2>
 <p>Victoria has had the most severe restrictions in Australia. Consequently, Victorian
 electricity consumption is most likely to be impacted by COVID-19 restrictions.
-Before developing a model, it essential the data and its potential errors are understood.</p>
+Before developing a model, it is essential that the data and its potential errors are understood.</p>
 
 
 
@@ -918,7 +918,7 @@ Before developing a model, it essential the data and its potential errors are un
 <li>There is a clear seasonality with peak consumption occurring throughout winter.</li>
 <li>Errors are most obvious near the start of the year.</li>
 </ol>
-<p>Using one step ahead forecasts, the Holt-Winters triple exponential smoother is used
+<p>Using one step ahead forecasts, the Holt-Winters&rsquo; triple exponential smoother is used
 as a benchmark to track value gained from adding causal variables as inputs to 
 MLP and LSTM neural networks are explored.</p>
 
@@ -1006,7 +1006,7 @@ to prevent model drift.</p>
 <li>By tracking model drift average reductions in forecast errors <strong>8.15%</strong> can be observed.</li>
 <li>A reduction of errors is not guaranteed.</li>
 <li>As seen in blog 
-<a href="https://www.ashleyjwright.com/energy-consumption-pandemic-part-c/" target="_blank" rel="noopener">C</a> 
+<a href="https://www.ashleyjwright.com/post/energy-consumption-pandemic-part-c/" target="_blank" rel="noopener">C</a> 
 forecast errors do not drift significantly from the test data set.</li>
 </ol>
 <p>After developing a robust model that performs well in a number of states it is
@@ -1053,7 +1053,7 @@ consumption throughout COVID-19 restrictions and provide improved forecasts.</p>
 
 </figure>
 
-<p>Key takeaways from tracking model drift before and after COVID-19 restrictions:</p>
+<p>Key takeaways from tracking model drift before and after COVID-19 restrictions are:</p>
 <ol>
 <li>The MLP NN which accounts for COVID-19 restrictions drifts significantly less than its counterpart.</li>
 <li>Errors for both models are comparable before COVID-19 restrictions were put in places.</li>
@@ -1061,9 +1061,9 @@ consumption throughout COVID-19 restrictions and provide improved forecasts.</p>
 </ol>
 <h2 id="conclusions"><strong>Conclusions</strong></h2>
 <p>By developing a MLP ANN that uses causal variables to predict step ahead electricity
-consumption in Victoria I was able to detect a change in Victorian electricity 
+consumption in Victoria, I was able to detect a change in Victorian electricity 
 consumption data which is attributable to COVID-19 restrictions.</p>
-<p>Throughout this blog post I have demonstrated the value of tracking model performance,
+<p>Throughout this blog post, I have demonstrated the value of tracking model performance,
 developing scalable experiments, and obtaining consistent feedback.</p>
 <p>Please find my GitHub repository 
 <a href="https://github.com/AshjWright88" target="_blank" rel="noopener">here</a> and current resume

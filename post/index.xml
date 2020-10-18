@@ -31,12 +31,12 @@ suggests that decoupling of GDP and energy growth occurs as economies advance.&l
 which demonstrate a link between reduced electricity consumption as a result of 
 COVID-19 restrictions are starting to appear.&lt;/p&gt;
 &lt;p&gt;In my blog posts; 
-&lt;a href=&#34;https://www.ashleyjwright.com/energy-consumption-pandemic-part-a/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;A&lt;/a&gt;,
+&lt;a href=&#34;https://www.ashleyjwright.com/post/energy-consumption-pandemic-part-a/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;A&lt;/a&gt;,
 
-&lt;a href=&#34;https://www.ashleyjwright.com/energy-consumption-pandemic-part-b/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;B&lt;/a&gt;, 
-&lt;a href=&#34;https://www.ashleyjwright.com/energy-consumption-pandemic-part-c/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;C&lt;/a&gt;,
+&lt;a href=&#34;https://www.ashleyjwright.com/post/energy-consumption-pandemic-part-b/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;B&lt;/a&gt;, 
+&lt;a href=&#34;https://www.ashleyjwright.com/post/energy-consumption-pandemic-part-c/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;C&lt;/a&gt;,
 and 
-&lt;a href=&#34;https://www.ashleyjwright.com/energy-consumption-pandemic-part-d/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;D&lt;/a&gt; I explore
+&lt;a href=&#34;https://www.ashleyjwright.com/post/energy-consumption-pandemic-part-d/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;D&lt;/a&gt; I explore
 Australian electricity consumption data for observable patterns that can be attributed to restrictions
 brought on by COVID-19. This blog post will demonstrate how I detected a change in
 Victorian electricity consumption which can be attributed to COVID-19 restrictions.&lt;/p&gt;
@@ -47,22 +47,22 @@ Victorian electricity consumption which can be attributed to COVID-19 restrictio
 &lt;li&gt;conclusions.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;methodology&#34;&gt;&lt;strong&gt;Methodology&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;To deliver meaningful results in a short time I committed to posting weekly blog posts
+&lt;p&gt;To deliver meaningful results in a short time I committed to posting weekly blog posts on
 LinkedIn. These blog posts enabled me to produce results straight away, scale my
 project accordingly, and gain valuable feedback from interested data scientists. 
 The blog posts covered:&lt;/p&gt;
-&lt;ul&gt;
+&lt;ol&gt;
 &lt;li&gt;Exploratory Data Analysis,&lt;/li&gt;
-&lt;li&gt;Tracking model development,&lt;/li&gt;
-&lt;li&gt;Model drift, and&lt;/li&gt;
+&lt;li&gt;tracking model development,&lt;/li&gt;
+&lt;li&gt;model drift, and&lt;/li&gt;
 &lt;li&gt;a way to attribute forecast errors to COVID-19 restrictions.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;I will now provide an overview of key results and discussions to be found in my
+&lt;/ol&gt;
+&lt;p&gt;I will now provide an overview of the key results and discussions to be found in my
 blog posts.&lt;/p&gt;
 &lt;h2 id=&#34;results--discussion&#34;&gt;&lt;strong&gt;Results &amp;amp; Discussion&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;Victoria has had the most severe restrictions in Australia. Consequently, Victorian
 electricity consumption is most likely to be impacted by COVID-19 restrictions.
-Before developing a model, it essential the data and its potential errors are understood.&lt;/p&gt;
+Before developing a model, it is essential that the data and its potential errors are understood.&lt;/p&gt;
 
 
 
@@ -105,7 +105,7 @@ Before developing a model, it essential the data and its potential errors are un
 &lt;li&gt;There is a clear seasonality with peak consumption occurring throughout winter.&lt;/li&gt;
 &lt;li&gt;Errors are most obvious near the start of the year.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Using one step ahead forecasts, the Holt-Winters triple exponential smoother is used
+&lt;p&gt;Using one step ahead forecasts, the Holt-Winters&amp;rsquo; triple exponential smoother is used
 as a benchmark to track value gained from adding causal variables as inputs to 
 MLP and LSTM neural networks are explored.&lt;/p&gt;
 
@@ -193,7 +193,7 @@ to prevent model drift.&lt;/p&gt;
 &lt;li&gt;By tracking model drift average reductions in forecast errors &lt;strong&gt;8.15%&lt;/strong&gt; can be observed.&lt;/li&gt;
 &lt;li&gt;A reduction of errors is not guaranteed.&lt;/li&gt;
 &lt;li&gt;As seen in blog 
-&lt;a href=&#34;https://www.ashleyjwright.com/energy-consumption-pandemic-part-c/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;C&lt;/a&gt; 
+&lt;a href=&#34;https://www.ashleyjwright.com/post/energy-consumption-pandemic-part-c/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;C&lt;/a&gt; 
 forecast errors do not drift significantly from the test data set.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;After developing a robust model that performs well in a number of states it is
@@ -240,7 +240,7 @@ consumption throughout COVID-19 restrictions and provide improved forecasts.&lt;
 
 &lt;/figure&gt;
 
-&lt;p&gt;Key takeaways from tracking model drift before and after COVID-19 restrictions:&lt;/p&gt;
+&lt;p&gt;Key takeaways from tracking model drift before and after COVID-19 restrictions are:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;The MLP NN which accounts for COVID-19 restrictions drifts significantly less than its counterpart.&lt;/li&gt;
 &lt;li&gt;Errors for both models are comparable before COVID-19 restrictions were put in places.&lt;/li&gt;
@@ -248,9 +248,9 @@ consumption throughout COVID-19 restrictions and provide improved forecasts.&lt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;conclusions&#34;&gt;&lt;strong&gt;Conclusions&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;By developing a MLP ANN that uses causal variables to predict step ahead electricity
-consumption in Victoria I was able to detect a change in Victorian electricity 
+consumption in Victoria, I was able to detect a change in Victorian electricity 
 consumption data which is attributable to COVID-19 restrictions.&lt;/p&gt;
-&lt;p&gt;Throughout this blog post I have demonstrated the value of tracking model performance,
+&lt;p&gt;Throughout this blog post, I have demonstrated the value of tracking model performance,
 developing scalable experiments, and obtaining consistent feedback.&lt;/p&gt;
 &lt;p&gt;Please find my GitHub repository 
 &lt;a href=&#34;https://github.com/AshjWright88&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt; and current resume
@@ -270,13 +270,13 @@ collection and data availability, and the time taken to quality control data.&lt
 do not rely on the availability of recent observations of the variable that we 
 are trying to forecast. Further, by developing a causal MLP neural network
 we are able to attribute changes in electricity consumption to COVID-19 restrictions.&lt;/p&gt;
-&lt;p&gt;Using 30 min electricity consumption for Victoria this blog will:&lt;/p&gt;
+&lt;p&gt;Using 30 minute electricity consumption for Victoria this blog will:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Develop a feature based causal model used to predict 1 step ahead electricity consumption.&lt;/li&gt;
-&lt;li&gt;Add a binary flag which indicates the start of COVID-19 restrictions in Victoria.&lt;/li&gt;
+&lt;li&gt;Develop a model which uses a binary flag to indicate the start of COVID-19 restrictions in Victoria.&lt;/li&gt;
 &lt;li&gt;Compare model forecast densities with the observed electricity consumption.&lt;/li&gt;
 &lt;li&gt;Use model drift to demonstrate when performance improvements occur.&lt;/li&gt;
-&lt;li&gt;Show that by including a binary flag which indicates the start of COVID-19 restrictions
+&lt;li&gt;Show that by including a binary flag which indicates the start of COVID-19 restrictions,
 test errors can be reduced by &lt;strong&gt;5.08%&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;using-a-feature-based-causal-mlp-ann-to-forecast-electricity-consumption&#34;&gt;&lt;strong&gt;Using a feature based causal MLP ANN to forecast electricity consumption&lt;/strong&gt;&lt;/h2&gt;
@@ -331,7 +331,8 @@ from holidays, hot or cold weather spells, or weekends.&lt;/p&gt;
 &lt;li&gt;General consumption trend and seasonality are modelled quite well.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;accounting-for-covid-19-restrictions-in-electricity-consumption-forecasts&#34;&gt;&lt;strong&gt;Accounting for COVID-19 restrictions in electricity consumption forecasts&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;intro&lt;/p&gt;
+&lt;p&gt;To account for possible behavioural changes due to COVID-19 restrictions in Victoria
+we now introduce a binary flag that starts on March 23 2020 and persists to the current day.&lt;/p&gt;
 
 
 
@@ -371,7 +372,7 @@ from holidays, hot or cold weather spells, or weekends.&lt;/p&gt;
 &lt;p&gt;Key takeaway messages from including a flag to represent COVID-19 restrictions include:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Errors no longer increase as much in the test period.&lt;/li&gt;
-&lt;li&gt;There does not appear to be a significant difference between the two models forecast capability.&lt;/li&gt;
+&lt;li&gt;There does not appear to be a significant difference between the two models&amp;rsquo; forecast capability.&lt;/li&gt;
 &lt;li&gt;Further analysis is required to detect a change in forecast capability.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;comparing-model-forecast-densities&#34;&gt;&lt;strong&gt;Comparing model forecast densities&lt;/strong&gt;&lt;/h2&gt;
@@ -425,7 +426,8 @@ representative of the observed density for the test period.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;tracking-model-drift-to-detect-changes-in-electricity-consumption-resulting-from-covid-19-restrictions&#34;&gt;&lt;strong&gt;Tracking model drift to detect changes in electricity consumption resulting from COVID-19 restrictions&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;We have observed a small difference between the density plots in the test period and
-now go back to checking to see how/if the two models relative errors drift in the test period.&lt;/p&gt;
+now move on to check if the two models relative errors are different throughout the COVID-19
+restrictions period.&lt;/p&gt;
 
 
 
@@ -462,17 +464,17 @@ now go back to checking to see how/if the two models relative errors drift in th
 
 &lt;/figure&gt;
 
-&lt;p&gt;Key takeaway messages from tracking model drift include:&lt;/p&gt;
+&lt;p&gt;Key takeaway messages from tracking model drift are:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;By including a flag which accounts for COVID-19 restrictions our causal model
-drifts significantly less.&lt;/li&gt;
+drifts noticeably less.&lt;/li&gt;
 &lt;li&gt;It is possible that the base model even starts to drift in the training period.&lt;/li&gt;
 &lt;li&gt;The base model performs slightly better in the training period.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Throughout these blog posts I have used the neural network and random seed. It
+&lt;p&gt;Throughout these blog posts I have used the same neural network and random seed. It
 is possible that results would differ if an ensemble or different seed was used.
 I attempted to account for this by training for a large number of epochs and
-using model checkpoints and selecting the model which had the best validation period
+using model checkpoints to select the model which had the best validation period
 performance.&lt;/p&gt;
 &lt;h2 id=&#34;reductions-in-forecast-errors-by-accounting-for-covid-19-restrictions&#34;&gt;&lt;strong&gt;Reductions in forecast errors by accounting for COVID-19 restrictions&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;A noticeable drift in relative errors that can be attributed to COVID-19 restrictions 
@@ -519,7 +521,7 @@ in Victoria was observed. We can now quantify these results.&lt;/p&gt;
 &lt;li&gt;While both models have similar performance it is likely that including the binary flag
 for COVID-19 restrictions will make the model more robust for future predictions.&lt;/li&gt;
 &lt;li&gt;There is less difference between test and training MAPE for the model which includes
-a binary flag for COVID-19. This suggests the model was not over-fit.&lt;/li&gt;
+a binary flag for COVID-19. This suggests the model was less prone to over-fitting.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;p&gt;This blog post has demonstrated that model forecast errors can be attributed

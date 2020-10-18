@@ -789,7 +789,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    4 min read
+    5 min read
   </span>
   
 
@@ -839,13 +839,13 @@ collection and data availability, and the time taken to quality control data.</p
 do not rely on the availability of recent observations of the variable that we 
 are trying to forecast. Further, by developing a causal MLP neural network
 we are able to attribute changes in electricity consumption to COVID-19 restrictions.</p>
-<p>Using 30 min electricity consumption for Victoria this blog will:</p>
+<p>Using 30 minute electricity consumption for Victoria this blog will:</p>
 <ol>
 <li>Develop a feature based causal model used to predict 1 step ahead electricity consumption.</li>
-<li>Add a binary flag which indicates the start of COVID-19 restrictions in Victoria.</li>
+<li>Develop a model which uses a binary flag to indicate the start of COVID-19 restrictions in Victoria.</li>
 <li>Compare model forecast densities with the observed electricity consumption.</li>
 <li>Use model drift to demonstrate when performance improvements occur.</li>
-<li>Show that by including a binary flag which indicates the start of COVID-19 restrictions
+<li>Show that by including a binary flag which indicates the start of COVID-19 restrictions,
 test errors can be reduced by <strong>5.08%</strong></li>
 </ol>
 <h2 id="using-a-feature-based-causal-mlp-ann-to-forecast-electricity-consumption"><strong>Using a feature based causal MLP ANN to forecast electricity consumption</strong></h2>
@@ -900,7 +900,8 @@ from holidays, hot or cold weather spells, or weekends.</p>
 <li>General consumption trend and seasonality are modelled quite well.</li>
 </ol>
 <h2 id="accounting-for-covid-19-restrictions-in-electricity-consumption-forecasts"><strong>Accounting for COVID-19 restrictions in electricity consumption forecasts</strong></h2>
-<p>intro</p>
+<p>To account for possible behavioural changes due to COVID-19 restrictions in Victoria
+we now introduce a binary flag that starts on March 23 2020 and persists to the current day.</p>
 
 
 
@@ -940,7 +941,7 @@ from holidays, hot or cold weather spells, or weekends.</p>
 <p>Key takeaway messages from including a flag to represent COVID-19 restrictions include:</p>
 <ol>
 <li>Errors no longer increase as much in the test period.</li>
-<li>There does not appear to be a significant difference between the two models forecast capability.</li>
+<li>There does not appear to be a significant difference between the two models&rsquo; forecast capability.</li>
 <li>Further analysis is required to detect a change in forecast capability.</li>
 </ol>
 <h2 id="comparing-model-forecast-densities"><strong>Comparing model forecast densities</strong></h2>
@@ -994,7 +995,8 @@ representative of the observed density for the test period.</li>
 </ol>
 <h2 id="tracking-model-drift-to-detect-changes-in-electricity-consumption-resulting-from-covid-19-restrictions"><strong>Tracking model drift to detect changes in electricity consumption resulting from COVID-19 restrictions</strong></h2>
 <p>We have observed a small difference between the density plots in the test period and
-now go back to checking to see how/if the two models relative errors drift in the test period.</p>
+now move on to check if the two models relative errors are different throughout the COVID-19
+restrictions period.</p>
 
 
 
@@ -1031,17 +1033,17 @@ now go back to checking to see how/if the two models relative errors drift in th
 
 </figure>
 
-<p>Key takeaway messages from tracking model drift include:</p>
+<p>Key takeaway messages from tracking model drift are:</p>
 <ol>
 <li>By including a flag which accounts for COVID-19 restrictions our causal model
-drifts significantly less.</li>
+drifts noticeably less.</li>
 <li>It is possible that the base model even starts to drift in the training period.</li>
 <li>The base model performs slightly better in the training period.</li>
 </ol>
-<p>Throughout these blog posts I have used the neural network and random seed. It
+<p>Throughout these blog posts I have used the same neural network and random seed. It
 is possible that results would differ if an ensemble or different seed was used.
 I attempted to account for this by training for a large number of epochs and
-using model checkpoints and selecting the model which had the best validation period
+using model checkpoints to select the model which had the best validation period
 performance.</p>
 <h2 id="reductions-in-forecast-errors-by-accounting-for-covid-19-restrictions"><strong>Reductions in forecast errors by accounting for COVID-19 restrictions</strong></h2>
 <p>A noticeable drift in relative errors that can be attributed to COVID-19 restrictions 
@@ -1088,7 +1090,7 @@ in Victoria was observed. We can now quantify these results.</p>
 <li>While both models have similar performance it is likely that including the binary flag
 for COVID-19 restrictions will make the model more robust for future predictions.</li>
 <li>There is less difference between test and training MAPE for the model which includes
-a binary flag for COVID-19. This suggests the model was not over-fit.</li>
+a binary flag for COVID-19. This suggests the model was less prone to over-fitting.</li>
 </ol>
 <h2 id="summary">Summary</h2>
 <p>This blog post has demonstrated that model forecast errors can be attributed
